@@ -29,7 +29,12 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "1 - Presentacion", "1 - Pre
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "1.1 - Web", "1.1 - Web", "{9661CC70-3D6A-4ED5-A668-4A7B9C3A6433}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Clisoft.Presentation.Web", "Clisoft.Presentation.Web\Clisoft.Presentation.Web.csproj", "{DEADF77A-F283-4214-B1E7-74FD3BC98282}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Clisoft.Presentation.Web", "Clisoft.Presentation.Web\Clisoft.Presentation.Web.csproj", "{DEADF77A-F283-4214-B1E7-74FD3BC98282}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "6 - Base de Datos", "6 - Base de Datos", "{29850193-CC07-4DAA-98D2-D346D1280658}"
+	ProjectSection(SolutionItems) = preProject
+		BDMemoryKings.sql = BDMemoryKings.sql
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
