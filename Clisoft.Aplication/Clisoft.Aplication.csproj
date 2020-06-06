@@ -8,4 +8,8 @@
     <ProjectReference Include="..\Clisoft.Domain\Clisoft.Domain.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Interface\" />
+  </ItemGroup>
+
 </Project>

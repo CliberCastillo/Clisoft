@@ -11,19 +11,25 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "4 - Dominio", "4 - Dominio"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "5 - Infraestructura", "5 - Infraestructura", "{5CBE1673-8045-4383-B053-EE968D4B46C2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Clisoft.Domain", "Clisoft.Domain\Clisoft.Domain.csproj", "{9127D695-0349-4866-8BFE-7CFE91DC19F6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Clisoft.Domain", "Clisoft.Domain\Clisoft.Domain.csproj", "{9127D695-0349-4866-8BFE-7CFE91DC19F6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Clisoft.Aplication", "Clisoft.Aplication\Clisoft.Aplication.csproj", "{EB2D9778-F597-4934-9A7D-4B280AF195B1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Clisoft.Aplication", "Clisoft.Aplication\Clisoft.Aplication.csproj", "{EB2D9778-F597-4934-9A7D-4B280AF195B1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Clisoft.Api", "Clisoft.Api\Clisoft.Api.csproj", "{7AF633A8-6C91-48CB-865E-13956CE12D9F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Clisoft.Api", "Clisoft.Api\Clisoft.Api.csproj", "{7AF633A8-6C91-48CB-865E-13956CE12D9F}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "5.1 - Data", "5.1 - Data", "{0CFE10CC-6173-44D3-B89D-BA6B3287EBA7}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "5.2 - CrossCutting", "5.2 - CrossCutting", "{6D6A64F2-427C-4B1B-8FB5-53423C3909F0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Clisoft.Infraestructure.Data", "Clisoft.Infraestructure.Data\Clisoft.Infraestructure.Data.csproj", "{4C0ED440-6387-4FBA-BC03-27711CF5FB7F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Clisoft.Infraestructure.Data", "Clisoft.Infraestructure.Data\Clisoft.Infraestructure.Data.csproj", "{4C0ED440-6387-4FBA-BC03-27711CF5FB7F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Clisoft.Infraestructure.CrossCutting.IoC", "Clisoft.Infraestructure.CrossCutting.IoC\Clisoft.Infraestructure.CrossCutting.IoC.csproj", "{2F1A72BE-70CF-43D0-8742-1C61223EA7CB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Clisoft.Infraestructure.CrossCutting.IoC", "Clisoft.Infraestructure.CrossCutting.IoC\Clisoft.Infraestructure.CrossCutting.IoC.csproj", "{2F1A72BE-70CF-43D0-8742-1C61223EA7CB}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "1 - Presentacion", "1 - Presentacion", "{82D6A000-2244-4564-9EBD-BC06BB52FA72}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "1.1 - Web", "1.1 - Web", "{9661CC70-3D6A-4ED5-A668-4A7B9C3A6433}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Clisoft.Presentation.Web", "Clisoft.Presentation.Web\Clisoft.Presentation.Web.csproj", "{DEADF77A-F283-4214-B1E7-74FD3BC98282}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -51,6 +57,10 @@ Global
 		{2F1A72BE-70CF-43D0-8742-1C61223EA7CB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2F1A72BE-70CF-43D0-8742-1C61223EA7CB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2F1A72BE-70CF-43D0-8742-1C61223EA7CB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DEADF77A-F283-4214-B1E7-74FD3BC98282}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DEADF77A-F283-4214-B1E7-74FD3BC98282}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DEADF77A-F283-4214-B1E7-74FD3BC98282}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DEADF77A-F283-4214-B1E7-74FD3BC98282}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -63,6 +73,8 @@ Global
 		{6D6A64F2-427C-4B1B-8FB5-53423C3909F0} = {5CBE1673-8045-4383-B053-EE968D4B46C2}
 		{4C0ED440-6387-4FBA-BC03-27711CF5FB7F} = {0CFE10CC-6173-44D3-B89D-BA6B3287EBA7}
 		{2F1A72BE-70CF-43D0-8742-1C61223EA7CB} = {6D6A64F2-427C-4B1B-8FB5-53423C3909F0}
+		{9661CC70-3D6A-4ED5-A668-4A7B9C3A6433} = {82D6A000-2244-4564-9EBD-BC06BB52FA72}
+		{DEADF77A-F283-4214-B1E7-74FD3BC98282} = {9661CC70-3D6A-4ED5-A668-4A7B9C3A6433}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {3CD2A456-C35D-4E9F-BC4C-A64ED8581B1F}
