@@ -12,6 +12,7 @@ namespace Clisoft.Infraestructure.CrossCutting.IoC
         public static void RegisterServices(IServiceCollection services)
         {
             //services.AddScoped<IEFRepository, EFRepository>();
+            services.AddTransient(typeof(IEFRepository<>), typeof(EFRepository<>));
         }
     }
 }

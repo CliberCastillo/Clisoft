@@ -1,8 +1,9 @@
 ﻿using System;
+using Clisoft.Infraestructure.Data.Entities;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata;
 
-namespace Clisoft.Infraestructure.Data.Entities
+namespace Clisoft.Infraestructure.Data.Context
 {
     public partial class BDMemoryKingsContext : DbContext
     {
