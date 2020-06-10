@@ -1,4 +1,4 @@
-﻿using Clisoft.Domain.Entity;
+﻿using Clisoft.Domain.Entities;
 using System.Collections.Generic;
 
 namespace Clisoft.Domain.Interfaces.Repository

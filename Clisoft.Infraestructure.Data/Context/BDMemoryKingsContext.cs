@@ -1,5 +1,5 @@
 ﻿using System;
-using Clisoft.Infraestructure.Data.Entities;
+using Clisoft.Domain.Entities;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata;
 

@@ -1,11 +1,8 @@
-﻿using Clisoft.Domain.Entity;
+﻿using Clisoft.Domain.Entities;
 using Clisoft.Domain.Interfaces.Repository;
 using Clisoft.Infraestructure.Data.Context;
-using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-
 namespace Clisoft.Infraestructure.Data.Repository.EntityFramework
 {
     public class RolRepository : EFRepository<Rol>, IRolRepository
@@ -16,10 +13,6 @@ namespace Clisoft.Infraestructure.Data.Repository.EntityFramework
             _context = context;
         }
 
-        public List<Rol> role()
-        {
-            var nose = _context.Rol.ToList();
-            return nose;
-        }
+        public List<Rol> role() => _context.Rol.ToList();
     }
 }

@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-
-namespace Clisoft.Infraestructure.Data.Entities
+﻿namespace Clisoft.Domain.Entities
 {
     public partial class Domicilio
     {
