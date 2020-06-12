@@ -6,8 +6,29 @@ namespace Clisoft.Domain.Interfaces.Repository
     {
         void Add(T obj);
         Task<T> GetByIdAsync(object id);
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
         //IQueryable<T> GetAll();
         //void Remove(object id);
         //void Update(T obj);
-    }
-}
