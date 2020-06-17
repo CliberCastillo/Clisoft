@@ -5,12 +5,11 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Clisoft.Domain\Clisoft.Domain.csproj" />
+    <PackageReference Include="AutoMapper" Version="9.0.0" />
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Interface\" />
-    <Folder Include="Repository\" />
+    <ProjectReference Include="..\Clisoft.Domain\Clisoft.Domain.csproj" />
   </ItemGroup>
 
 </Project>

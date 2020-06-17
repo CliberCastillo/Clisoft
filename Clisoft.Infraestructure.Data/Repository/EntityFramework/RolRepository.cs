@@ -1,8 +1,11 @@
 ﻿using Clisoft.Domain.Entities;
 using Clisoft.Domain.Interfaces.Repository;
 using Clisoft.Infraestructure.Data.Context;
+using Microsoft.EntityFrameworkCore;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading.Tasks;
+
 namespace Clisoft.Infraestructure.Data.Repository.EntityFramework
 {
     public class RolRepository : EFRepository<Rol>, IRolRepository
@@ -16,6 +19,9 @@ namespace Clisoft.Infraestructure.Data.Repository.EntityFramework
         }
 
 
-        public bool buscarRol(string id) => _context.Rol.Any(x => x.IdRol == id);
+        public async Task<List<Rol>> buscarRolAsync(string id)
+        {
+            return await _context.Rol.Where(x => x.IdRol == id).ToListAsync();
+        }
     }
 }

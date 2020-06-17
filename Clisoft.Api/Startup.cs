@@ -2,6 +2,11 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Clisoft.Aplication.Interface.Entity;
+using Clisoft.Aplication.Service.Entity;
+using Clisoft.Domain.Interfaces.Repository;
+using Clisoft.Infraestructure.CrossCutting.IoC;
+using Clisoft.Infraestructure.Data.Repository.EntityFramework;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -26,6 +31,7 @@ namespace Clisoft.Api
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers();
+            NativeInjectorBootStrapper.RegisterServices(services);
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

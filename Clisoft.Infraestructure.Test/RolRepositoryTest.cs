@@ -1,15 +1,23 @@
+using Clisoft.Domain.Interfaces.Repository;
+using Clisoft.Infraestructure.Data.Context;
 using Clisoft.Infraestructure.Data.Repository.EntityFramework;
+using Moq;
 using Xunit;
 
 namespace Clisoft.Infraestructure.Test
 {
-    public class UnitTest1
+    public class RolRepositoryTest
     {
         [Fact]
-        public void Test1()
+        public void TrueSiExists()
         {
+            //string rol = "RO001";
+            //var mock = new Mock<IRolRepository>();
+            //var mocks = new Mock<BDMemoryKingsContext>();
+            //mock.Setup(p => p.buscarRol(rol)).Returns(true);
 
-            RolRepository obj = new RolRepository();
+            //RolRepository rolel = new RolRepository(mocks.Object);
+            //Assert.True(rolel.buscarRol(rol));
         }
     }
 }

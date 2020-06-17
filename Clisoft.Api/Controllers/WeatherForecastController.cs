@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Clisoft.Aplication;
+using Clisoft.Aplication.Interface.Entity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 
@@ -11,16 +13,16 @@ namespace Clisoft.Api.Controllers
     [Route("[controller]")]
     public class WeatherForecastController : ControllerBase
     {
-        private static readonly string[] Summaries = new[]
+        private readonly IRolAppService _rolAppService;
+        public WeatherForecastController(IRolAppService rolAppService)
         {
-            "Freezing", "Bracing", "Chilly", "Cool", "Mild", "Warm", "Balmy", "Hot", "Sweltering", "Scorching"
-        };
-
-        private readonly ILogger<WeatherForecastController> _logger;
-
-        public WeatherForecastController(ILogger<WeatherForecastController> logger)
+            _rolAppService = rolAppService;
+        }
+        [HttpGet]
+        public Task<List<RolDTO>> BuscarDatosPorid(string id)
         {
-            _logger = logger;
+             var nose =  _rolAppService.buscarRolAsync(id);
+            return nose;
         }
     }
 }
