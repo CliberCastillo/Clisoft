@@ -1,6 +1,4 @@
-﻿using Clisoft.Aplication.Interface;
-using Clisoft.Aplication.Interface.Entity;
-using Clisoft.Aplication.Service;
+﻿using Clisoft.Aplication.Interface.Entity;
 using Clisoft.Aplication.Service.Entity;
 using Clisoft.Domain.Interfaces.Repository;
 using Clisoft.Infraestructure.Data.Repository.EntityFramework;
@@ -14,8 +12,6 @@ namespace Clisoft.Infraestructure.CrossCutting.IoC
         {
             //services.AddScoped<IEFRepository, EFRepository>();
             services.AddScoped<IRolAppService, RolAppService>();
-            services.AddScoped(typeof(IEFRepository<>), typeof(EFRepository<>));
-            services.AddScoped(typeof(IBaseAppService<,>), typeof(BaseAppService<,>));
             services.AddScoped<IRolRepository, RolRepository>();
         }
     }

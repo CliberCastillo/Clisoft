@@ -19,9 +19,10 @@ namespace Clisoft.Infraestructure.Data.Repository.EntityFramework
         }
 
 
-        public async Task<List<Rol>> buscarRolAsync(string id)
+        public async Task<List<Rol>> buscarRolAsync()
         {
-            return await _context.Rol.Where(x => x.IdRol == id).ToListAsync();
+            var nose = await _context.Rol.ToListAsync();
+            return nose;
         }
     }
 }

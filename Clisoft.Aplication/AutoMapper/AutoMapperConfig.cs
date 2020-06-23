@@ -10,7 +10,7 @@ namespace Clisoft.Aplication.AutoMapper
         {
             return new Type[]
             {
-                typeof(Map)
+                typeof(MappingsProfile)
             };
         }
     }

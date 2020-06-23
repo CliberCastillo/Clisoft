@@ -10,18 +10,23 @@ using System.Threading.Tasks;
 
 namespace Clisoft.Aplication.Service.Entity
 {
-    public class RolAppService : BaseAppService<RolDTO, Rol>, IRolAppService
+    public class RolAppService : /*BaseAppService<RolDTO, Rol>,*/ IRolAppService
     {
         private readonly IRolRepository _rolRepository;
+        private readonly IMapper _mapper;
 
-        public RolAppService(IRolRepository rolRepository, IMapper mapper):base(rolRepository, mapper)
+        public RolAppService(IRolRepository rolRepository, IMapper mapper)
         {
             _rolRepository = rolRepository;
+            _mapper = mapper;
+
         }
-        public async Task<List<RolDTO>> buscarRolAsync(string id)
+        public async Task<List<Rol>> buscarRolAsync()
         {
-            var lstRolesPorId =  _mapper.Map<List<RolDTO>>(_rolRepository.buscarRolAsync(id));
-            return lstRolesPorId;
+            var listado = await _rolRepository.buscarRolAsync();
+            return listado;
+            //var lstRolesPorId =  _mapper.Map<List<RolDTO>>(_rolRepository.buscarRolAsync());
+            //return lstRolesPorId;
         }
     }
 }

@@ -6,8 +6,9 @@ using System.Threading.Tasks;
 
 namespace Clisoft.Aplication.Interface.Entity
 {
-    public interface IRolAppService: IBaseAppService<RolDTO, Rol>
+    public interface IRolAppService /*: IBaseAppService<RolDTO, Rol>*/
     {
-        Task<List<RolDTO>> buscarRolAsync(string id);
+
+        Task<List<Rol>> buscarRolAsync();
     }
 }

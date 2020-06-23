@@ -6,6 +6,6 @@ namespace Clisoft.Domain.Interfaces.Repository
 {
     public interface IRolRepository : IEFRepository<Rol>
     {
-        Task<List<Rol>> buscarRolAsync(string id);
+        Task<List<Rol>> buscarRolAsync();
     }
 }

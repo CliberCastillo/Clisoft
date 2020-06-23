@@ -6,11 +6,11 @@ using System.Text;
 
 namespace Clisoft.Aplication.AutoMapper
 {
-    public class Map : Profile
+    public class MappingsProfile : Profile
     {
-        public Map()
+        public MappingsProfile()
         {
-            CreateMap<Rol, RolDTO>();
+            CreateMap<Rol, RolDTO>().ReverseMap();
         }
     }
 }
