@@ -24,25 +24,16 @@ namespace Clisoft.Api
 
         public IConfiguration Configuration { get; }
 
-        // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers();
-            var mappingConfig = new MapperConfiguration(mc =>
-            {
-                mc.AddProfile(new MappingsProfile());
-            });
 
-            IMapper mapper = mappingConfig.CreateMapper();
-            services.AddSingleton(mapper);
+            services.AddAutoMapper(c => c.AddProfile<MappingsProfile>(),typeof(Startup));
+
             services.AddDbContext<BDMemoryKingsContext>(options => options.UseSqlServer(Configuration.GetConnectionString("Conexion")));
             NativeInjectorBootStrapper.RegisterServices(services);
-            services.AddScoped<IRolAppService, RolAppService>();
-            services.AddScoped<IRolRepository, RolRepository>();
 
         }
-
-        // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
             if (env.IsDevelopment())

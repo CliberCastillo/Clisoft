@@ -18,11 +18,9 @@ namespace Clisoft.Infraestructure.Data.Repository.EntityFramework
             _context = context;
         }
 
-
         public async Task<List<Rol>> buscarRolAsync()
         {
-            var nose = await _context.Rol.ToListAsync();
-            return nose;
+            return await _context.Rol.ToListAsync();
         }
     }
 }

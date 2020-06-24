@@ -1,5 +1,6 @@
 ﻿using System;
 using Clisoft.Domain.Entities;
+using Clisoft.Infraestructure.Data.Configuration;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata;
 
@@ -26,39 +27,10 @@ namespace Clisoft.Infraestructure.Data.Context
         public virtual DbSet<Rol> Rol { get; set; }
         public virtual DbSet<Usuario> Usuario { get; set; }
 
-        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-        {
-            if (!optionsBuilder.IsConfigured)
-            {
-
-                optionsBuilder.UseSqlServer("Conexion");
-            }
-        }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            modelBuilder.Entity<Categoria>(entity =>
-            {
-                entity.HasKey(e => e.IdCategoria)
-                    .HasName("PK__Categori__8A3D240CF3333907");
-
-                entity.Property(e => e.IdCategoria)
-                    .HasColumnName("idCategoria")
-                    .HasMaxLength(5)
-                    .IsUnicode(false);
-
-                entity.Property(e => e.Foto)
-                    .HasColumnName("foto")
-                    .HasMaxLength(50)
-                    .IsUnicode(false);
-
-                entity.Property(e => e.Nombre)
-                    .HasColumnName("nombre")
-                    .HasMaxLength(30)
-                    .IsUnicode(false)
-                    .IsFixedLength();
-            });
-
+            modelBuilder.ApplyConfiguration(new CategoriaConfiguration());
             modelBuilder.Entity<Compras>(entity =>
             {
                 entity.HasKey(e => e.IdCompras)
@@ -281,22 +253,7 @@ namespace Clisoft.Infraestructure.Data.Context
                     .HasConstraintName("FK__Producto__idMarc__70DDC3D8");
             });
 
-            modelBuilder.Entity<Rol>(entity =>
-            {
-                entity.HasKey(e => e.IdRol)
-                    .HasName("PK__Rol__3C872F76800DAA62");
-
-                entity.Property(e => e.IdRol)
-                    .HasColumnName("idRol")
-                    .HasMaxLength(5)
-                    .IsUnicode(false);
-
-                entity.Property(e => e.Nombre)
-                    .HasColumnName("nombre")
-                    .HasMaxLength(30)
-                    .IsUnicode(false)
-                    .IsFixedLength();
-            });
+            modelBuilder.ApplyConfiguration(new RolConfiguration());
 
             modelBuilder.Entity<Usuario>(entity =>
             {

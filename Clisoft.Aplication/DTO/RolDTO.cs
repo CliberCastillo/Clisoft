@@ -4,9 +4,9 @@ using System;
 
 namespace Clisoft.Aplication
 {
-    public class RolDTO : Rol
+    public class RolDTO
     {
-        //DESKTOP-30N757O\MSSQLSERVER01
-        //Northwind
+        public string IdRol { get; set; }
+        public string Nombre { get; set; }
     }
 }
