@@ -4,6 +4,7 @@ using Clisoft.Domain.Entities;
 using Clisoft.Domain.Interfaces.Repository;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -28,9 +29,31 @@ namespace Clisoft.Aplication.Service
             _eFRepositoy.Add(_mapper.Map<T>(obj));
         }
 
-        public Task<ObjectDTO> GetByIdAsync(object id)
+        public async Task<ObjectDTO> GetByIdAsync(object id)
         {
-            throw new NotImplementedException();
+            return _mapper.Map<ObjectDTO>(await _eFRepositoy.GetByIdAsync(id));
+        }
+
+        public List<ObjectDTO> GetAll()
+        {
+            return _mapper.Map<List<T>, List<ObjectDTO>>(_eFRepositoy.GetAll());
+        }
+
+        public void Update(ObjectDTO obj)
+        {
+            _eFRepositoy.Update(_mapper.Map<T>(obj));
+        }
+
+        public void Delete(object id)
+        {
+            _eFRepositoy.Delete(id);
+        }
+
+        public void Save()
+        {
+            _eFRepositoy.Save();
         }
     }
+
+
 }

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -9,7 +10,11 @@ namespace Clisoft.Aplication.Interface
         where ObjectDTO : class
         where T : class
     {
-        void Add(ObjectDTO obj);
         Task<ObjectDTO> GetByIdAsync(object id);
+        List<ObjectDTO> GetAll();
+        void Add(ObjectDTO obj);
+        void Update(ObjectDTO obj);
+        void Delete(object id);
+        void Save();
     }
 }

@@ -1,11 +1,17 @@
-﻿using System.Threading.Tasks;
+﻿using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
 
 namespace Clisoft.Domain.Interfaces.Repository
 {
     public interface IEFRepository<T> where T : class
     {
-        void Add(T obj);
         Task<T> GetByIdAsync(object id);
+        List<T> GetAll();
+        void Add(T obj);
+        void Update(T obj);
+        void Delete(object id);
+        void Save();
     }
 }
 

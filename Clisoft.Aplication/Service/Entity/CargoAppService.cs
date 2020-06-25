@@ -9,16 +9,14 @@ namespace Clisoft.Aplication.Service.Entity
 {
     public class CargoAppService : BaseAppService<CargoDTO, Cargo>, ICargoAppService
     {
-        private readonly ICargoRepository _rolRepository;
-        //private readonly IEFRepository<Rol> _rolRepo;
-        public CargoAppService(ICargoRepository rolRepository, /*IEFRepository<Rol> rolRepo,*/ IMapper mapper) : base(rolRepository, mapper)
+        private readonly ICargoRepository _cargoRepository;
+        public CargoAppService(ICargoRepository rolRepository, IMapper mapper) : base(rolRepository, mapper)
         {
-            _rolRepository = rolRepository;
-            //_rolRepo = rolRepo;
+            _cargoRepository = rolRepository;
         }
         public async Task<List<CargoDTO>> buscarCargoAsync()
         {
-            return _mapper.Map<List<Cargo>,List<CargoDTO>>(await _rolRepository.buscarCargoAsync());
+            return _mapper.Map<List<Cargo>,List<CargoDTO>>(await _cargoRepository.buscarCargoAsync());
         }
     }
 }

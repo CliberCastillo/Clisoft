@@ -1,6 +1,8 @@
 ﻿using Clisoft.Domain.Interfaces.Repository;
 using Clisoft.Infraestructure.Data.Context;
 using Microsoft.EntityFrameworkCore;
+using System.Collections.Generic;
+using System.Linq;
 using System.Threading.Tasks;
 
 namespace Clisoft.Infraestructure.Data.Repository.EntityFramework
@@ -18,32 +20,32 @@ namespace Clisoft.Infraestructure.Data.Repository.EntityFramework
         public void Add(T obj)
         {
             _dbSet.Add(obj);
-            _context.SaveChanges();
         }
 
         public async Task<T> GetByIdAsync(object id)
         {
             return await _dbSet.FindAsync(id);
         }
-        //public IQueryable<T> GetAll()
-        //{
-        //    return _dbSet.AsNoTracking();
-        //}
+        public List<T> GetAll()
+        {
+            return _dbSet.ToList();
+        }
 
+        public void Update(T obj)
+        {
+            _dbSet.Attach(obj);
+            _context.Entry(obj).State = EntityState.Modified;
+        }
 
-        //public void Remove(object id)
-        //{
-        //    _dbSet.Remove(_dbSet.Find(id));
-        //}
+        public void Delete(object id)
+        {
+            T existing = _dbSet.Find(id);
+            _dbSet.Remove(existing);
+        }
 
-        //public int SaveChanges()
-        //{
-        //    throw new NotImplementedException();
-        //}
-
-        //public void Update(T obj)
-        //{
-        //    _dbSet.Update(obj);
-        //}
+        public void Save()
+        {
+            _context.SaveChanges();
+        }
     }
 }

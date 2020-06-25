@@ -31,11 +31,6 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "1.1 - Web", "1.1 - Web", "{
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Clisoft.Presentation.Web", "Clisoft.Presentation.Web\Clisoft.Presentation.Web.csproj", "{DEADF77A-F283-4214-B1E7-74FD3BC98282}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "7 - Base de Datos", "7 - Base de Datos", "{29850193-CC07-4DAA-98D2-D346D1280658}"
-	ProjectSection(SolutionItems) = preProject
-		BDMemoryKings.sql = BDMemoryKings.sql
-	EndProjectSection
-EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "6 - Test", "6 - Test", "{861C0216-848A-4FE4-8322-D48A0C45B546}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "6 .1 - Domain", "6 .1 - Domain", "{8C33B6D2-DA41-449F-84F5-97AEA31B21C6}"

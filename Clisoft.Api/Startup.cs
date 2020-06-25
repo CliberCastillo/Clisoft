@@ -1,11 +1,7 @@
 using AutoMapper;
 using Clisoft.Aplication.AutoMapper;
-using Clisoft.Aplication.Interface.Entity;
-using Clisoft.Aplication.Service.Entity;
-using Clisoft.Domain.Interfaces.Repository;
 using Clisoft.Infraestructure.CrossCutting.IoC;
 using Clisoft.Infraestructure.Data.Context;
-using Clisoft.Infraestructure.Data.Repository.EntityFramework;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.EntityFrameworkCore;
