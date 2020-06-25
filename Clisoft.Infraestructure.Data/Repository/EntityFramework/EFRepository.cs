@@ -7,10 +7,10 @@ namespace Clisoft.Infraestructure.Data.Repository.EntityFramework
 {
     public class EFRepository<T> : IEFRepository<T> where T : class
     {
-        private readonly BDMemoryKingsContext _context;
+        private readonly ClisoftContext _context;
         private readonly DbSet<T> _dbSet;
 
-        public EFRepository(BDMemoryKingsContext context)
+        public EFRepository(ClisoftContext context)
         {
             _context = context;
             _dbSet = context.Set<T>();

@@ -1,8 +1,5 @@
 ﻿using AutoMapper;
 using Clisoft.Domain.Entities;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace Clisoft.Aplication.AutoMapper
 {
@@ -10,7 +7,7 @@ namespace Clisoft.Aplication.AutoMapper
     {
         public MappingsProfile()
         {
-            CreateMap<Rol, RolDTO>().ReverseMap();
+            CreateMap<Cargo, CargoDTO>().ReverseMap();
         }
     }
 }
