@@ -28,9 +28,9 @@ namespace Clisoft.Api
         {
             services.AddControllers();
 
-            services.AddAutoMapper(c => c.AddProfile<MappingsProfile>(),typeof(Startup));
+            services.AddAutoMapper(configure => configure.AddProfile<MappingsProfile>(),typeof(Startup));
 
-            services.AddDbContext<BDMemoryKingsContext>(options => options.UseSqlServer(Configuration.GetConnectionString("Conexion")));
+            services.AddDbContext<ClisoftContext>(options => options.UseSqlServer(Configuration.GetConnectionString("Conexion")));
             NativeInjectorBootStrapper.RegisterServices(services);
 
         }

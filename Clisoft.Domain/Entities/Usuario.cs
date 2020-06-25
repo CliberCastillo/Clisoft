@@ -6,23 +6,15 @@ namespace Clisoft.Domain.Entities
     {
         public Usuario()
         {
-            Compras = new HashSet<Compras>();
-            Domicilio = new HashSet<Domicilio>();
+            Cliente = new HashSet<Cliente>();
+            Empleado = new HashSet<Empleado>();
         }
 
-        public int IdUsuario { get; set; }
-        public string Email { get; set; }
+        public string IdUsuario { get; set; }
+        public string Usuario1 { get; set; }
         public string Contraseña { get; set; }
-        public string ApellidoPaterno { get; set; }
-        public string ApellidoMaterno { get; set; }
-        public string Nombres { get; set; }
-        public string Genero { get; set; }
-        public string Telefono { get; set; }
-        public string Estado { get; set; }
-        public string IdRol { get; set; }
 
-        public virtual Rol IdRolNavigation { get; set; }
-        public virtual ICollection<Compras> Compras { get; set; }
-        public virtual ICollection<Domicilio> Domicilio { get; set; }
+        public virtual ICollection<Cliente> Cliente { get; set; }
+        public virtual ICollection<Empleado> Empleado { get; set; }
     }
 }

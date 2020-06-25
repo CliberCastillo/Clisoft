@@ -8,17 +8,17 @@ namespace Clisoft.Api.Controllers
 {
     [ApiController]
     [Route("[controller]")]
-    public class RolController : ControllerBase
+    public class CargoController : ControllerBase
     {
-        private readonly IRolAppService _rolAppService;
-        public RolController(IRolAppService rolAppService)
+        private readonly ICargoAppService _rolAppService;
+        public CargoController(ICargoAppService rolAppService)
         {
             _rolAppService = rolAppService;
         }
         [HttpGet]
-        public Task<List<RolDTO>> BuscarDatosPorid()
+        public Task<List<CargoDTO>> ListadoDeCargos()
         {
-             return  _rolAppService.buscarRolAsync();
+             return  _rolAppService.buscarCargoAsync();
         }
     }
 }

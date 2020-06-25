@@ -8,19 +8,19 @@ using System.Threading.Tasks;
 
 namespace Clisoft.Infraestructure.Data.Repository.EntityFramework
 {
-    public class RolRepository : EFRepository<Rol>, IRolRepository
+    public class CargoRepository : EFRepository<Cargo>, ICargoRepository
     {
 
-        private readonly BDMemoryKingsContext _context;
+        private readonly ClisoftContext _context;
 
-        public RolRepository(BDMemoryKingsContext context) : base(context)
+        public CargoRepository(ClisoftContext context) : base(context)
         {
             _context = context;
         }
 
-        public async Task<List<Rol>> buscarRolAsync()
+        public async Task<List<Cargo>> buscarCargoAsync()
         {
-            return await _context.Rol.ToListAsync();
+            return await _context.Cargo.ToListAsync();
         }
     }
 }

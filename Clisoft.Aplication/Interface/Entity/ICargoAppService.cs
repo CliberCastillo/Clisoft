@@ -4,8 +4,8 @@ using System.Threading.Tasks;
 
 namespace Clisoft.Aplication.Interface.Entity
 {
-    public interface IRolAppService : IBaseAppService<RolDTO, Rol>
+    public interface ICargoAppService : IBaseAppService<CargoDTO, Cargo>
     {
-        Task<List<RolDTO>> buscarRolAsync();
+        Task<List<CargoDTO>> buscarCargoAsync();
     }
 }

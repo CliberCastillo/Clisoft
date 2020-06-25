@@ -4,8 +4,8 @@ using System.Threading.Tasks;
 
 namespace Clisoft.Domain.Interfaces.Repository
 {
-    public interface IRolRepository : IEFRepository<Rol>
+    public interface ICargoRepository : IEFRepository<Cargo>
     {
-        Task<List<Rol>> buscarRolAsync();
+        Task<List<Cargo>> buscarCargoAsync();
     }
 }

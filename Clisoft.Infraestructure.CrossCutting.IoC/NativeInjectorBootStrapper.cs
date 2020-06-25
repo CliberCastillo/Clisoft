@@ -11,8 +11,8 @@ namespace Clisoft.Infraestructure.CrossCutting.IoC
         public static void RegisterServices(IServiceCollection services)
         {
             //services.AddScoped<IEFRepository, EFRepository>();
-            services.AddScoped<IRolAppService, RolAppService>();
-            services.AddScoped<IRolRepository, RolRepository>();
+            services.AddScoped<ICargoAppService, CargoAppService>();
+            services.AddScoped<ICargoRepository, CargoRepository>();
         }
     }
 }
