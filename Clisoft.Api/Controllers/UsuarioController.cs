@@ -1,4 +1,4 @@
-﻿using Clisoft.Aplication;
+﻿using Clisoft.Aplication.DTO;
 using Clisoft.Aplication.Interface.Entity;
 using Microsoft.AspNetCore.Mvc;
 using System;
@@ -9,19 +9,19 @@ namespace Clisoft.Api.Controllers
 {
     [ApiController]
     [Route("[controller]")]
-    public class CargoController : ControllerBase
+    public class UsuarioController : ControllerBase
     {
-        private readonly ICargoAppService _cargoAppService;
-        public CargoController(ICargoAppService cargoAppService)
+        private readonly IUsuarioAppService _usuarioAppService;
+        public UsuarioController(IUsuarioAppService usuarioAppService)
         {
-            _cargoAppService = cargoAppService;
+            _usuarioAppService = usuarioAppService;
         }
         [HttpGet]
-        public ActionResult<List<CargoDTO>> GetAll()
+        public ActionResult<List<UsuarioDTO>> GetAll()
         {
             try
             {
-                return _cargoAppService.GetAll();
+                return _usuarioAppService.GetAll();
             }
             catch (Exception)
             {
@@ -29,16 +29,16 @@ namespace Clisoft.Api.Controllers
             }
         }
         [HttpGet("{id}")]
-        public async Task<ActionResult<CargoDTO>> GetByIdAsync(string id)
+        public async Task<ActionResult<UsuarioDTO>> GetByIdAsync(string id)
         {
             try
             {
-                var cargoPorId = await _cargoAppService.GetByIdAsync(id);
-                if (cargoPorId == null)
+                var usuarioPorId = await _usuarioAppService.GetByIdAsync(id);
+                if (usuarioPorId == null)
                 {
                     return NotFound();
                 }
-                return cargoPorId;
+                return usuarioPorId;
             }
             catch (Exception)
             {
@@ -46,13 +46,13 @@ namespace Clisoft.Api.Controllers
             }
         }
         [HttpPost]
-        public ActionResult<CargoDTO> Add([FromBody] CargoDTO cargo)
+        public ActionResult<UsuarioDTO> Add([FromBody] UsuarioDTO usuario)
         {
             try
             {
-                _cargoAppService.Add(cargo);
-                _cargoAppService.Save();
-                return CreatedAtAction(nameof(Add), new { id = cargo.IdCargo }, cargo);
+                _usuarioAppService.Add(usuario);
+                _usuarioAppService.Save();
+                return CreatedAtAction(nameof(Add), new { id = usuario.NombreUsuario }, usuario);
             }
             catch (Exception)
             {
@@ -60,15 +60,15 @@ namespace Clisoft.Api.Controllers
             }
         }
         [HttpPut("{id}")]
-        public ActionResult<CargoDTO> Update(string id, [FromBody] CargoDTO cargo)
+        public ActionResult<UsuarioDTO> Update(string id, [FromBody] UsuarioDTO usuario)
         {
             try
             {
-                if (cargo == null)
+                if (usuario == null)
                     return NotFound();
-                _cargoAppService.Update(cargo);
-                _cargoAppService.Save();
-                return cargo;
+                _usuarioAppService.Update(usuario);
+                _usuarioAppService.Save();
+                return usuario;
             }
             catch (Exception)
             {
@@ -80,8 +80,8 @@ namespace Clisoft.Api.Controllers
         {
             try
             {
-                _cargoAppService.Delete(id);
-                _cargoAppService.Save();
+                _usuarioAppService.Delete(id);
+                _usuarioAppService.Save();
                 return NoContent();
 
             }

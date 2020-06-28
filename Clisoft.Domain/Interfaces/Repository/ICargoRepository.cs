@@ -4,7 +4,7 @@ using System.Threading.Tasks;
 
 namespace Clisoft.Domain.Interfaces.Repository
 {
-    public interface ICargoRepository : IEFRepository<Cargo>
+    public interface ICargoRepository : IGenericRepository<Cargo>
     {
         Task<List<Cargo>> buscarCargoAsync();
     }

@@ -4,7 +4,7 @@ using System.Threading.Tasks;
 
 namespace Clisoft.Domain.Interfaces.Repository
 {
-    public interface IEFRepository<T> where T : class
+    public interface IGenericRepository<T> where T : class
     {
         Task<T> GetByIdAsync(object id);
         List<T> GetAll();

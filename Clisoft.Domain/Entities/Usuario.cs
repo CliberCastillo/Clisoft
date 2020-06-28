@@ -11,7 +11,7 @@ namespace Clisoft.Domain.Entities
         }
 
         public string IdUsuario { get; set; }
-        public string Usuario1 { get; set; }
+        public string NombreUsuario { get; set; }
         public string Contraseña { get; set; }
 
         public virtual ICollection<Cliente> Cliente { get; set; }

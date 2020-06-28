@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Clisoft.Infraestructure.Data.Repository.EntityFramework
 {
-    public class CargoRepository : EFRepository<Cargo>, ICargoRepository
+    public class CargoRepository : IGenericRepository<Cargo>, ICargoRepository
     {
 
         private readonly ClisoftContext _context;

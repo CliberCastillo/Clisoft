@@ -12,10 +12,21 @@ namespace Clisoft.Infraestructure.CrossCutting.IoC
     {
         public static void RegisterServices(IServiceCollection services)
         {
-            services.AddScoped(typeof(IEFRepository<>), typeof(EFRepository<>));
+            #region Aplicacion
+
             services.AddScoped(typeof(IBaseAppService<,>), typeof(BaseAppService<,>));
             services.AddScoped<ICargoAppService, CargoAppService>();
+            services.AddScoped<IUsuarioAppService, UsuarioAppService>();
+
+            #endregion
+
+            #region Infraestructura
+
+            services.AddScoped(typeof(Domain.Interfaces.Repository.IGenericRepository<>), typeof(Data.Repository.EntityFramework.IGenericRepository<>));
             services.AddScoped<ICargoRepository, CargoRepository>();
+            services.AddScoped<IUsuarioRepository, UsuarioRepository>();
+
+            #endregion
         }
     }
 }

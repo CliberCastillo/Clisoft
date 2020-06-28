@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using Clisoft.Aplication.DTO;
 using Clisoft.Domain.Entities;
 
 namespace Clisoft.Aplication.AutoMapper
@@ -8,6 +9,7 @@ namespace Clisoft.Aplication.AutoMapper
         public MappingsProfile()
         {
             CreateMap<Cargo, CargoDTO>().ReverseMap();
+            CreateMap<Usuario, UsuarioDTO>().ReverseMap();
         }
     }
 }

@@ -14,11 +14,11 @@ namespace Clisoft.Aplication.Service
         where ObjectDTO : class
         where T : class
     {
-        private readonly IEFRepository<T> _eFRepositoy;
+        private readonly IGenericRepository<T> _eFRepositoy;
 
         public readonly IMapper _mapper;
 
-        public BaseAppService(IEFRepository<T> eFRepository, IMapper mapper)
+        public BaseAppService(IGenericRepository<T> eFRepository, IMapper mapper)
         {
             _eFRepositoy = eFRepository;
             _mapper = mapper;

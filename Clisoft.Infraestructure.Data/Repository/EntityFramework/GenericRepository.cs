@@ -7,12 +7,12 @@ using System.Threading.Tasks;
 
 namespace Clisoft.Infraestructure.Data.Repository.EntityFramework
 {
-    public class EFRepository<T> : IEFRepository<T> where T : class
+    public class IGenericRepository<T> : Domain.Interfaces.Repository.IGenericRepository<T> where T : class
     {
         private readonly ClisoftContext _context;
         private readonly DbSet<T> _dbSet;
 
-        public EFRepository(ClisoftContext context)
+        public IGenericRepository(ClisoftContext context)
         {
             _context = context;
             _dbSet = context.Set<T>();
@@ -28,7 +28,8 @@ namespace Clisoft.Infraestructure.Data.Repository.EntityFramework
         }
         public List<T> GetAll()
         {
-            return _dbSet.ToList();
+            var listado = _dbSet.ToList();
+            return listado;
         }
 
         public void Update(T obj)
