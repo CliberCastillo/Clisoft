@@ -14,3 +14,15 @@ La arquitectura es similar como se ve en la siguiente imagen.
 * JWT
 * AutoMapper
 
+### Pasos a seguir para ejecutar el proyecto
+
+una vez clonado el proyecto en Visual Studio lo que aremos sera ir al menu de > herramientas > Administrador de paquetes NuGet > Consola de administrador de paquetes y escribir el siguiente comando. (recuerda cambiar la cadena de conexion en appsettings.json)
+
+```
+Add-Migration FirstMigration
+```
+seguidamente
+```
+Update-Database
+```
+lo que hicimos fue crear una base de datos a partir del codigo c# utilizando Entity Framework Core. (Code First), si todo fue correcto procede a ejecutar la solucion.
