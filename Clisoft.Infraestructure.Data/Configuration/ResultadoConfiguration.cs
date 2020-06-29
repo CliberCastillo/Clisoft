@@ -30,9 +30,9 @@ namespace Clisoft.Infraestructure.Data.Configuration
                 .HasMaxLength(5)
                 .IsUnicode(false);
 
-            entity.Property(e => e.Resultado1)
+            entity.Property(e => e.NombreResultado)
                 .IsRequired()
-                .HasColumnName("resultado")
+                .HasColumnName("NombreResultado")
                 .HasMaxLength(50)
                 .IsUnicode(false);
 

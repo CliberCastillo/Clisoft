@@ -15,12 +15,6 @@ namespace Clisoft.Infraestructure.Data.Configuration
                 .HasMaxLength(5)
                 .IsUnicode(false);
 
-            entity.Property(e => e.Apellidos)
-                .IsRequired()
-                .HasColumnName("apellidos")
-                .HasMaxLength(50)
-                .IsUnicode(false);
-
             entity.Property(e => e.Dni)
                 .IsRequired()
                 .HasColumnName("dni")

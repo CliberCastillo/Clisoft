@@ -21,13 +21,6 @@ namespace Clisoft.Infraestructure.Data.Context
         public virtual DbSet<PerfilExamen> PerfilExamen { get; set; }
         public virtual DbSet<Resultado> Resultado { get; set; }
         public virtual DbSet<Usuario> Usuario { get; set; }
-        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-        {
-            if (!optionsBuilder.IsConfigured)
-            {
-                optionsBuilder.UseSqlServer("Server=DESKTOP-30N757O;Database=Clisoft;Trusted_Connection=True;");
-            }
-        }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
