@@ -38,7 +38,7 @@ namespace Clisoft.Infraestructure.Data.Configuration
                 .HasColumnName("raza")
                 .HasMaxLength(50)
                 .IsUnicode(false);
-            entity.Property(e => e.Nombre)
+            entity.Property(e => e.Especie)
                 .IsRequired()
                 .HasColumnName("Especie")
                 .HasMaxLength(30)
