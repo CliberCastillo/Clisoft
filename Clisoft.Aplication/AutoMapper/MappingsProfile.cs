@@ -10,6 +10,7 @@ namespace Clisoft.Aplication.AutoMapper
         {
             CreateMap<Cargo, CargoDTO>().ReverseMap();
             CreateMap<Usuario, UsuarioDTO>().ReverseMap();
+            CreateMap<Mascota, MascotaDTO>().ReverseMap();
         }
     }
 }

@@ -17,6 +17,7 @@ namespace Clisoft.Infraestructure.CrossCutting.IoC
             services.AddScoped(typeof(IBaseAppService<,>), typeof(BaseAppService<,>));
             services.AddScoped<ICargoAppService, CargoAppService>();
             services.AddScoped<IUsuarioAppService, UsuarioAppService>();
+            services.AddScoped<IMascotaAppService, MascotaAppService>();
 
             #endregion
 
@@ -25,6 +26,7 @@ namespace Clisoft.Infraestructure.CrossCutting.IoC
             services.AddScoped(typeof(Domain.Interfaces.Repository.IGenericRepository<>), typeof(Data.Repository.EntityFramework.IGenericRepository<>));
             services.AddScoped<ICargoRepository, CargoRepository>();
             services.AddScoped<IUsuarioRepository, UsuarioRepository>();
+            services.AddScoped<IMascotaRepository, MascotaRepository>();
 
             #endregion
         }

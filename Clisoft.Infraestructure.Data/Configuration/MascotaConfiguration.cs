@@ -15,12 +15,6 @@ namespace Clisoft.Infraestructure.Data.Configuration
                 .HasMaxLength(5)
                 .IsUnicode(false);
 
-            entity.Property(e => e.IdCliente)
-                .IsRequired()
-                .HasColumnName("idCliente")
-                .HasMaxLength(5)
-                .IsUnicode(false);
-
             entity.Property(e => e.Nombre)
                 .IsRequired()
                 .HasColumnName("nombre")
@@ -40,8 +34,14 @@ namespace Clisoft.Infraestructure.Data.Configuration
                 .IsUnicode(false);
             entity.Property(e => e.Especie)
                 .IsRequired()
-                .HasColumnName("Especie")
+                .HasColumnName("especie")
                 .HasMaxLength(30)
+                .IsUnicode(false);
+
+            entity.Property(e => e.IdCliente)
+                .IsRequired()
+                .HasColumnName("idCliente")
+                .HasMaxLength(5)
                 .IsUnicode(false);
 
             entity.HasOne(d => d.IdClienteNavigation)
