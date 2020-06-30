@@ -5,6 +5,5 @@ namespace Clisoft.Domain.Interfaces.Repository
 {
     public interface IMascotaRepository : IGenericRepository<Mascota>
     {
-        List<Mascota> ListadoMascota();
     }
 }

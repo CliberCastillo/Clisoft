@@ -28,8 +28,7 @@ namespace Clisoft.Infraestructure.Data.Repository.EntityFramework
         }
         public List<T> GetAll()
         {
-            var listado = _dbSet.ToList();
-            return listado;
+            return _dbSet.ToList();
         }
 
         public void Update(T obj)

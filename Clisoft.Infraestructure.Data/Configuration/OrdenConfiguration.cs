@@ -10,6 +10,10 @@ namespace Clisoft.Infraestructure.Data.Configuration
         {
             entity.HasKey(e => e.IdOrden);
 
+            entity.HasIndex(e => e.IdCliente);
+
+            entity.HasIndex(e => e.IdEmpleado);
+
             entity.Property(e => e.IdOrden)
                 .HasColumnName("idOrden")
                 .HasMaxLength(5)

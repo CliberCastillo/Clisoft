@@ -26,7 +26,6 @@ namespace Clisoft.Infraestructure.Data.Configuration
 
             entity.Property(e => e.NombreUsuario)
                 .IsRequired()
-                .HasColumnName("NombreUsuario")
                 .HasMaxLength(30)
                 .IsUnicode(false);
         }

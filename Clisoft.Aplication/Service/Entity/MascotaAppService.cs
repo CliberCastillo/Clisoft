@@ -14,10 +14,5 @@ namespace Clisoft.Aplication.Service.Entity
         {
             _mascotaRepository = mascotaRepository;
         }
-
-        public List<MascotaDTO> ListadoMascota()
-        {
-            return _mapper.Map<List<Mascota>, List<MascotaDTO>>(_mascotaRepository.ListadoMascota());
-        }
     }
 }

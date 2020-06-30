@@ -14,11 +14,5 @@ namespace Clisoft.Infraestructure.Data.Repository.EntityFramework
         {
             _context = context;
         }
-
-        public List<Mascota> ListadoMascota()
-        {
-            var resultado = _context.Mascota.ToList();
-            return resultado;
-        }
     }
 }

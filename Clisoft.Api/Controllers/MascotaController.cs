@@ -3,7 +3,6 @@ using Clisoft.Aplication.Interface.Entity;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Threading.Tasks;
 
 namespace Clisoft.Api.Controllers
@@ -22,7 +21,7 @@ namespace Clisoft.Api.Controllers
         {
             try
             {
-                return _mascotaAppService.ListadoMascota();
+                return _mascotaAppService.GetAll();
             }
             catch (Exception)
             {
@@ -40,6 +39,51 @@ namespace Clisoft.Api.Controllers
                     return NotFound();
                 }
                 return mascotaPorId;
+            }
+            catch (Exception)
+            {
+                return BadRequest();
+            }
+        }
+        [HttpPost]
+        public ActionResult<InsertarMascotaDTO> Add([FromBody] InsertarMascotaDTO insertarMascota)
+        {
+            try
+            {
+                _mascotaAppService.Add(insertarMascota);
+                _mascotaAppService.Save();
+                return CreatedAtAction(nameof(Add), new { id = insertarMascota.IdCliente }, insertarMascota);
+            }
+            catch (Exception)
+            {
+                return BadRequest();
+            }
+        }
+        [HttpPut("{id}")]
+        public ActionResult<InsertarMascotaDTO> Update(string id, [FromBody] InsertarMascotaDTO insertarMascota)
+        {
+            try
+            {
+                if (insertarMascota == null)
+                    return NotFound();
+                _mascotaAppService.Update(insertarMascota);
+                _mascotaAppService.Save();
+                return insertarMascota;
+            }
+            catch (Exception)
+            {
+                return BadRequest();
+            }
+        }
+        [HttpDelete("{id}")]
+        public ActionResult Delete(string id)
+        {
+            try
+            {
+                _mascotaAppService.Delete(id);
+                _mascotaAppService.Save();
+                return NoContent();
+
             }
             catch (Exception)
             {

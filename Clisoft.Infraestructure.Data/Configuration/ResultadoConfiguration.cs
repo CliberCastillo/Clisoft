@@ -13,6 +13,10 @@ namespace Clisoft.Infraestructure.Data.Configuration
         {
             entity.HasKey(e => e.IdResultado);
 
+            entity.HasIndex(e => e.IdDetalleOrden);
+
+            entity.HasIndex(e => e.IdExamen);
+
             entity.Property(e => e.IdResultado)
                 .HasColumnName("idResultado")
                 .HasMaxLength(5)
@@ -32,7 +36,6 @@ namespace Clisoft.Infraestructure.Data.Configuration
 
             entity.Property(e => e.NombreResultado)
                 .IsRequired()
-                .HasColumnName("NombreResultado")
                 .HasMaxLength(50)
                 .IsUnicode(false);
 
