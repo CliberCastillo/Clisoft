@@ -3,25 +3,26 @@ using Clisoft.Aplication.Interface.Entity;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Threading.Tasks;
 
 namespace Clisoft.Api.Controllers
 {
     [ApiController]
     [Route("[controller]")]
-    public class MascotaController : ControllerBase
+    public class ClienteController : ControllerBase
     {
-        private readonly IMascotaAppService _mascotaAppService;
-        public MascotaController(IMascotaAppService mascotaAppService)
+        private readonly IClienteAppService _clienteAppService;
+        public ClienteController(IClienteAppService clienteAppService)
         {
-            _mascotaAppService = mascotaAppService;
+            _clienteAppService = clienteAppService;
         }
         [HttpGet]
-        public ActionResult<List<MascotaDTO>> GetAll()
+        public ActionResult<List<ClienteDTO>> GetAll()
         {
             try
             {
-                return _mascotaAppService.GetAll();
+                return _clienteAppService.GetAll();
             }
             catch (Exception)
             {
@@ -29,16 +30,16 @@ namespace Clisoft.Api.Controllers
             }
         }
         [HttpGet("{id}")]
-        public async Task<ActionResult<MascotaDTO>> GetByIdAsync(string id)
+        public async Task<ActionResult<ClienteDTO>> GetByIdAsync(string id)
         {
             try
             {
-                var mascotaPorId = await _mascotaAppService.GetByIdAsync(id);
-                if (mascotaPorId == null)
+                var clientePorId = await _clienteAppService.GetByIdAsync(id);
+                if (clientePorId == null)
                 {
                     return NotFound();
                 }
-                return mascotaPorId;
+                return clientePorId;
             }
             catch (Exception)
             {
@@ -46,13 +47,13 @@ namespace Clisoft.Api.Controllers
             }
         }
         [HttpPost]
-        public ActionResult<MascotaDTO> Add([FromBody] MascotaDTO mascota)
+        public ActionResult<ClienteDTO> Add([FromBody] ClienteDTO cliente)
         {
             try
             {
-                _mascotaAppService.Add(mascota);
-                _mascotaAppService.Save();
-                return CreatedAtAction(nameof(Add), new { id = mascota.IdMascota }, mascota);
+                _clienteAppService.Add(cliente);
+                _clienteAppService.Save();
+                return CreatedAtAction(nameof(Add), new { id = cliente.IdCliente }, cliente);
             }
             catch (Exception)
             {
@@ -60,15 +61,15 @@ namespace Clisoft.Api.Controllers
             }
         }
         [HttpPut("{id}")]
-        public ActionResult<MascotaDTO> Update(string id, [FromBody] MascotaDTO mascota)
+        public ActionResult<ClienteDTO> Update(string id, [FromBody] ClienteDTO cliente)
         {
             try
             {
-                if (mascota == null)
+                if (cliente == null)
                     return NotFound();
-                _mascotaAppService.Update(mascota);
-                _mascotaAppService.Save();
-                return mascota;
+                _clienteAppService.Update(cliente);
+                _clienteAppService.Save();
+                return cliente;
             }
             catch (Exception)
             {
@@ -80,8 +81,8 @@ namespace Clisoft.Api.Controllers
         {
             try
             {
-                _mascotaAppService.Delete(id);
-                _mascotaAppService.Save();
+                _clienteAppService.Delete(id);
+                _clienteAppService.Save();
                 return NoContent();
 
             }
