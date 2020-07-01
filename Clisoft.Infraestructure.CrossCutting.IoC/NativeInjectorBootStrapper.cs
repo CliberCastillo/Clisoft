@@ -19,6 +19,7 @@ namespace Clisoft.Infraestructure.CrossCutting.IoC
             services.AddScoped<IUsuarioAppService, UsuarioAppService>();
             services.AddScoped<IMascotaAppService, MascotaAppService>();
             services.AddScoped<IClienteAppService, ClienteAppService>();
+            services.AddScoped<IPerfilAppService, PerfilAppService>();
 
             #endregion
 
@@ -29,6 +30,7 @@ namespace Clisoft.Infraestructure.CrossCutting.IoC
             services.AddScoped<IUsuarioRepository, UsuarioRepository>();
             services.AddScoped<IMascotaRepository, MascotaRepository>();
             services.AddScoped<IClienteRepository, ClienteRepository>();
+            services.AddScoped<IPerfilRepository, PerfilRepository>();
 
             #endregion
         }
