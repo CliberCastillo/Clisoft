@@ -7,12 +7,12 @@ using System.Threading.Tasks;
 
 namespace Clisoft.Infraestructure.Data.Repository.EntityFramework
 {
-    public class IGenericRepository<T> : Domain.Interfaces.Repository.IGenericRepository<T> where T : class
+    public class GenericRepository<T> : IGenericRepository<T> where T : class
     {
         private readonly ClisoftContext _context;
         private readonly DbSet<T> _dbSet;
 
-        public IGenericRepository(ClisoftContext context)
+        public GenericRepository(ClisoftContext context)
         {
             _context = context;
             _dbSet = context.Set<T>();

@@ -20,17 +20,18 @@ namespace Clisoft.Infraestructure.CrossCutting.IoC
             services.AddScoped<IMascotaAppService, MascotaAppService>();
             services.AddScoped<IClienteAppService, ClienteAppService>();
             services.AddScoped<IPerfilAppService, PerfilAppService>();
+            services.AddScoped<IEmpleadoAppService, EmpleadoAppService>();
 
             #endregion
 
             #region Infraestructura
 
-            services.AddScoped(typeof(Domain.Interfaces.Repository.IGenericRepository<>), typeof(Data.Repository.EntityFramework.IGenericRepository<>));
+            services.AddScoped(typeof(IGenericRepository<>), typeof(GenericRepository<>));
             services.AddScoped<ICargoRepository, CargoRepository>();
             services.AddScoped<IUsuarioRepository, UsuarioRepository>();
             services.AddScoped<IMascotaRepository, MascotaRepository>();
             services.AddScoped<IClienteRepository, ClienteRepository>();
-            services.AddScoped<IPerfilRepository, PerfilRepository>();
+            services.AddScoped<IEmpleadoRepository, EmpleadoRepository>();
 
             #endregion
         }

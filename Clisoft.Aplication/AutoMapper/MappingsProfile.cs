@@ -13,6 +13,7 @@ namespace Clisoft.Aplication.AutoMapper
             CreateMap<Mascota, MascotaDTO>().ReverseMap();
             CreateMap<Cliente, ClienteDTO>().ReverseMap();
             CreateMap<Perfil, PerfilDTO>().ReverseMap();
+            CreateMap<Empleado, EmpleadoDTO>().ReverseMap();
         }
     }
 }
