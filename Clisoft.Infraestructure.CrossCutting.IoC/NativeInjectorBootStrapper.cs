@@ -5,6 +5,8 @@ using Clisoft.Aplication.Service.Entity;
 using Clisoft.Domain.Interfaces.Repository;
 using Clisoft.Infraestructure.Data.Repository.EntityFramework;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.OpenApi.Models;
+using System;
 
 namespace Clisoft.Infraestructure.CrossCutting.IoC
 {
@@ -39,6 +41,17 @@ namespace Clisoft.Infraestructure.CrossCutting.IoC
             services.AddScoped<IOrdenRepository, OrdenRepository>();
 
             #endregion
+            services.AddSwaggerGen(c =>
+            {
+               c.SwaggerDoc("v1", new OpenApiInfo
+               {
+                   Version = "v1",
+                   Title = "API - BIOPACIFIC",
+                   Description = "ASP .NET Core Web API - BIOPACIFIC"
+
+               });
+            });
+
         }
     }
 }

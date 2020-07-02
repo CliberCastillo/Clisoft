@@ -22,7 +22,7 @@ namespace Clisoft.Api
 
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddControllers();
+           services.AddControllers();
 
             services.AddAutoMapper(configure => configure.AddProfile<MappingsProfile>(),typeof(Startup));
 
@@ -37,6 +37,12 @@ namespace Clisoft.Api
                 app.UseDeveloperExceptionPage();
             }
 
+            app.UseSwagger();
+            app.UseSwaggerUI(x =>
+            {
+                x.SwaggerEndpoint("/swagger/v1/swagger.json", "API - BIOPACIFIC");
+                x.RoutePrefix = string.Empty;
+            });
             app.UseHttpsRedirection();
 
             app.UseRouting();
