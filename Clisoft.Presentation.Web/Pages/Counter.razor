@@ -4,13 +4,59 @@
 
 <p>Current count: @currentCount</p>
 
-<button class="btn btn-primary" @onclick="IncrementCount">Click me</button>
+<button class="btn btn-primarys" @onclick="IncrementCount">Click me</button>
 
-@code {
-    private int currentCount = 0;
-
-    private void IncrementCount()
+<MatTable Items="tasks" class="mat-elevation-z5" AllowSelection="true" SelectionChanged="SelectionChangedEvent">
+    <MatTableHeader>
+        <th>Id</th>
+        <th>Name</th>
+        <th>Description</th>
+    </MatTableHeader>
+    <MatTableRow>
+        <td>@context.Id</td>
+        <td>@context.Name</td>
+        <td>@context.Description</td>
+    </MatTableRow>
+</MatTable>
+<p>@_currentSelectedTask</p>
+@code
+        {
+    private string _currentSelectedTask;
+    public class Task
     {
-        currentCount++;
+        public int Id { get; set; }
+        public string Name { get; set; }
+        public string Description { get; set; }
+
+        public Task(int id, string name, string description)
+        {
+            Id = id;
+            Name = name;
+            Description = description;
+        }
+    }
+
+    Task[] tasks = new[]
+            {
+                new Task(1, "T1", "Do something..."),
+                new Task(2, "T2", "Do something..."),
+                new Task(3, "T3", "Do something..."),
+                new Task(4, "T4", "Do something..."),
+                new Task(5, "T5", "Do something..."),
+                new Task(6, "T6", "Do something..."),
+                new Task(7, "T7", "Do something..."),
+            };
+    public void SelectionChangedEvent(object row)
+    {
+        if (row == null)
+        {
+            _currentSelectedTask = "";
+        }
+        else
+        {
+            _currentSelectedTask = string.Format("clibe Nr. {0} has been selected", ((Task)row).Id);
+        }
+
+        this.StateHasChanged();
     }
 }

@@ -7,11 +7,30 @@ html, body {
 a, .btn-link {
     color: #0366d6;
 }
+/**/
 
-.btn-primary {
+
+
+.pricipal-color {
+    background-color: #5B2C6F;
+}
+
+.btn-outline-primarys {
     color: #fff;
-    background-color: #1b6ec2;
-    border-color: #1861ac;
+    border-color: white;
+}
+
+    .btn-outline-primarys:hover {
+        color: black;
+        background-color: #fff;
+        border-color: #5B2C6F
+    }
+
+
+.btn-primarys {
+    color: #fff;
+    background-color: #5B2C6F;
+    border-color: #5B2C6F;
 }
 
 app {
@@ -41,10 +60,10 @@ app {
             margin-left: 1.5rem;
         }
 
-.main .top-row a:first-child {
-    overflow: hidden;
-    text-overflow: ellipsis;
-}
+        .main .top-row a:first-child {
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
 
 .sidebar {
     background-image: linear-gradient(180deg, rgb(5, 39, 103) 0%, #3a0647 70%);
@@ -129,12 +148,12 @@ app {
     z-index: 1000;
 }
 
-#blazor-error-ui .dismiss {
-    cursor: pointer;
-    position: absolute;
-    right: 0.75rem;
-    top: 0.5rem;
-}
+    #blazor-error-ui .dismiss {
+        cursor: pointer;
+        position: absolute;
+        right: 0.75rem;
+        top: 0.5rem;
+    }
 
 @media (max-width: 767.98px) {
     .main .top-row:not(.auth) {

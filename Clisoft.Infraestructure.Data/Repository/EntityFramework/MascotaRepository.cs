@@ -6,7 +6,7 @@ using System.Linq;
 
 namespace Clisoft.Infraestructure.Data.Repository.EntityFramework
 {
-    public class MascotaRepository : IGenericRepository<Mascota>, IMascotaRepository
+    public class MascotaRepository : GenericRepository<Mascota>, IMascotaRepository
     {
         private readonly ClisoftContext _context;
 

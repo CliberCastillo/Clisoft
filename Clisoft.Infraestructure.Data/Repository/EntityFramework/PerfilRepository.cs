@@ -4,7 +4,7 @@ using Clisoft.Infraestructure.Data.Context;
 
 namespace Clisoft.Infraestructure.Data.Repository.EntityFramework
 {
-    public class PerfilRepository : IGenericRepository<Perfil>, IPerfilRepository
+    public class PerfilRepository : GenericRepository<Perfil>, IPerfilRepository
     {
         private readonly ClisoftContext _context;
 

@@ -1,46 +1,49 @@
-﻿<div class="top-row pl-4 navbar navbar-dark">
-    <a class="navbar-brand" href="">Laboratorio Clinico</a>
-    <button class="navbar-toggler" @onclick="ToggleNavMenu">
-        <span class="navbar-toggler-icon"></span>
-    </button>
-</div>
+﻿
+<nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-dark pricipal-color border-bottom box-shadow mb-3">
+    <div class="container">
+        <a class="navbar-brand font-weight-bold" href="">Laboratorio Clinico BIOPACIFIC</a>
+        <button class="navbar-toggler" type="button" @onclick="ToggleNavMenu">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="@NavMenuCssClass" @onclick="ToggleNavMenu">
+            <div class="float-right">
 
-<div class="@NavMenuCssClass" @onclick="ToggleNavMenu">
-    <ul class="nav flex-column">
-        <li class="nav-item px-3">
-            <NavLink class="nav-link" href="" Match="NavLinkMatch.All">
-                <span class="oi oi-home" aria-hidden="true"></span> Home
-            </NavLink>
-        </li>
-        <li class="nav-item px-4">
-            <NavLink class="nav-link" href="counter">
-                <span class="oi oi-plus" aria-hidden="true"></span> Counter
-            </NavLink>
-        </li>
-        <li class="nav-item px-3">
-            <NavLink class="nav-link" @onclick="()=>expandSubNav = !expandSubNav">
-                <span class="oi oi-list-rich" aria-hidden="true"></span> Fetch data
-            </NavLink>
-            @if (expandSubNav)
-            {
-                <NavLink class="expand-menu" href="fetchdata">
-                    <span>Sub1</span>
-                </NavLink>
-                <NavLink class="" href="counter">
-                    <span>Sub2</span>
-                </NavLink>
-            }
-        </li>
-    </ul>
-</div>
+                <ul class="navbar-nav flex-grow-1">
+                    <li class="nav-item">
+                        <NavLink class="nav-link text-withe" href="" Match="NavLinkMatch.All">
+                            <span class="oi oi-puzzle-piece" aria-hidden="true"></span> Empleado
+                        </NavLink>
+                    </li>
+                    <li class="nav-item">
+                        <NavLink class="nav-link text-withe" href="counter">
+                            <span class="oi oi-person" aria-hidden="true"></span> Cliente
+                        </NavLink>
+                    </li>
+                    <li class="nav-item mr-3">
+                        <NavLink class="nav-link text-withe" href="fetchdata">
+                            <span class="oi oi-beaker" aria-hidden="true"></span> Perfil
+                        </NavLink>
+                    </li>
+                    <li class="nav-item">
+                        <button class="btn btn-outline-primarys">
+                            Iniciar Sesion
+                        </button>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</nav>
+
 
 @code {
-    private bool collapseNavMenu = true;
-    private bool expandSubNav;
+    bool collapseNavMenu = true;
 
-    private string NavMenuCssClass => collapseNavMenu ? "collapse" : null;
+    string baseMenuClass = "navbar-collapse d-sm-inline-flex flex-sm-row-reverse";
 
-    private void ToggleNavMenu()
+    string NavMenuCssClass => baseMenuClass + (collapseNavMenu ? " collapse" : "");
+
+    void ToggleNavMenu()
     {
         collapseNavMenu = !collapseNavMenu;
     }

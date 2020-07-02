@@ -4,7 +4,7 @@ using Clisoft.Infraestructure.Data.Context;
 
 namespace Clisoft.Infraestructure.Data.Repository.EntityFramework
 {
-    public class EmpleadoRepository : IGenericRepository<Empleado>, IEmpleadoRepository
+    public class EmpleadoRepository : GenericRepository<Empleado>, IEmpleadoRepository
     {
         private readonly ClisoftContext _context;
 
