@@ -21,6 +21,8 @@ namespace Clisoft.Infraestructure.CrossCutting.IoC
             services.AddScoped<IClienteAppService, ClienteAppService>();
             services.AddScoped<IPerfilAppService, PerfilAppService>();
             services.AddScoped<IEmpleadoAppService, EmpleadoAppService>();
+            services.AddScoped<IExamenAppService, ExamenAppService>();
+            services.AddScoped<IOrdenAppService, OrdenAppService>();
 
             #endregion
 
@@ -30,8 +32,11 @@ namespace Clisoft.Infraestructure.CrossCutting.IoC
             services.AddScoped<ICargoRepository, CargoRepository>();
             services.AddScoped<IUsuarioRepository, UsuarioRepository>();
             services.AddScoped<IMascotaRepository, MascotaRepository>();
+            services.AddScoped<IPerfilRepository, PerfilRepository>();
             services.AddScoped<IClienteRepository, ClienteRepository>();
             services.AddScoped<IEmpleadoRepository, EmpleadoRepository>();
+            services.AddScoped<IExamenRepository, ExamenRepository>();
+            services.AddScoped<IOrdenRepository, OrdenRepository>();
 
             #endregion
         }
