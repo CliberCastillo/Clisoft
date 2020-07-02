@@ -25,6 +25,8 @@ namespace Clisoft.Infraestructure.CrossCutting.IoC
             services.AddScoped<IEmpleadoAppService, EmpleadoAppService>();
             services.AddScoped<IExamenAppService, ExamenAppService>();
             services.AddScoped<IOrdenAppService, OrdenAppService>();
+            services.AddScoped<IDetalleOrdenAppService, DetalleOrdenAppService>();
+            services.AddScoped<IPerfilExamenAppService, PerfilExamenAppService>();
 
             #endregion
 
@@ -39,6 +41,8 @@ namespace Clisoft.Infraestructure.CrossCutting.IoC
             services.AddScoped<IEmpleadoRepository, EmpleadoRepository>();
             services.AddScoped<IExamenRepository, ExamenRepository>();
             services.AddScoped<IOrdenRepository, OrdenRepository>();
+            services.AddScoped<IDetalleOrdenRepository, DetalleOrdenRepository>();
+            services.AddScoped<IPerfilExamenRepository, PerfilExamenRepository>();
 
             #endregion
             services.AddSwaggerGen(c =>
