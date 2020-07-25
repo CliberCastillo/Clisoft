@@ -21,7 +21,7 @@ namespace Clisoft.Infraestructure.Data.Repository.EntityFramework
         public string GenerarCodigo()
         {
             var numeroRegistrosExamen = _context.Examen.Count();
-            return "CA0" + (numeroRegistrosExamen + 1);
+            return "EX0" + (numeroRegistrosExamen + 1);
         }
     }
 }
