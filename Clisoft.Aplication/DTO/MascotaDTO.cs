@@ -7,5 +7,7 @@
         public string Genero { get; set; }
         public string Raza { get; set; }
         public string Especie { get; set; }
+        public string IdCliente { get; set; }
+
     }
 }

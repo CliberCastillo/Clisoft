@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 namespace Clisoft.Api.Controllers
 {
     [ApiController]
-    [Route("[controller]")]
+    [Route("api/[controller]")]
     public class CargoController : ControllerBase
     {
         private readonly ICargoAppService _cargoAppService;

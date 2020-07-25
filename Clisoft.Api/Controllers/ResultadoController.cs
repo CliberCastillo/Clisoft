@@ -3,25 +3,26 @@ using Clisoft.Aplication.Interface.Entity;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Threading.Tasks;
 
 namespace Clisoft.Api.Controllers
 {
     [ApiController]
     [Route("api/[controller]")]
-    public class EmpleadoController : ControllerBase
+    public class ResultadoController : ControllerBase
     {
-        private readonly IEmpleadoAppService _empleadoAppService;
-        public EmpleadoController(IEmpleadoAppService empleadoAppService)
+        private readonly IResultadoAppService _resultadoAppService;
+        public ResultadoController(IResultadoAppService resultadoAppService)
         {
-            _empleadoAppService = empleadoAppService;
+            _resultadoAppService = resultadoAppService;
         }
         [HttpGet]
-        public ActionResult<List<EmpleadoDTO>> GetAll()
+        public ActionResult<List<ResultadoDTO>> GetAll()
         {
             try
             {
-                return _empleadoAppService.GetAll();
+                return _resultadoAppService.GetAll();
             }
             catch (Exception)
             {
@@ -29,16 +30,16 @@ namespace Clisoft.Api.Controllers
             }
         }
         [HttpGet("{id}")]
-        public async Task<ActionResult<EmpleadoDTO>> GetByIdAsync(string id)
+        public async Task<ActionResult<ResultadoDTO>> GetByIdAsync(string id)
         {
             try
             {
-                var empleadoPorId = await _empleadoAppService.GetByIdAsync(id);
-                if (empleadoPorId == null)
+                var resultadoPorId = await _resultadoAppService.GetByIdAsync(id);
+                if (resultadoPorId == null)
                 {
                     return NotFound();
                 }
-                return empleadoPorId;
+                return resultadoPorId;
             }
             catch (Exception)
             {
@@ -46,15 +47,14 @@ namespace Clisoft.Api.Controllers
             }
         }
         [HttpPost]
-        public ActionResult<EmpleadoDTO> Add([FromBody] EmpleadoDTO empleado)
+        public ActionResult<ResultadoDTO> Add([FromBody] ResultadoDTO resultado)
         {
             try
             {
-                    empleado.IdEmpleado = _empleadoAppService.GenerarCodigo();
-                EmpleadoDTO empleadoDTO = empleado;
-                _empleadoAppService.Add(empleadoDTO);
-                _empleadoAppService.Save();
-                return CreatedAtAction(nameof(Add), new { id = empleado.IdEmpleado }, empleado);
+                resultado.IdResultado = _resultadoAppService.GenerarCodigo();
+                _resultadoAppService.Add(resultado);
+                _resultadoAppService.Save();
+                return CreatedAtAction(nameof(Add), new { id = resultado.IdResultado }, resultado);
             }
             catch (Exception)
             {
@@ -62,15 +62,15 @@ namespace Clisoft.Api.Controllers
             }
         }
         [HttpPut("{id}")]
-        public ActionResult<EmpleadoDTO> Update(string id, [FromBody] EmpleadoDTO empleado)
+        public ActionResult<ResultadoDTO> Update(string id, [FromBody] ResultadoDTO resultado)
         {
             try
             {
-                if (empleado == null)
+                if (resultado == null)
                     return NotFound();
-                _empleadoAppService.Update(empleado);
-                _empleadoAppService.Save();
-                return empleado;
+                _resultadoAppService.Update(resultado);
+                _resultadoAppService.Save();
+                return resultado;
             }
             catch (Exception)
             {
@@ -82,8 +82,8 @@ namespace Clisoft.Api.Controllers
         {
             try
             {
-                _empleadoAppService.Delete(id);
-                _empleadoAppService.Save();
+                _resultadoAppService.Delete(id);
+                _resultadoAppService.Save();
                 return NoContent();
 
             }

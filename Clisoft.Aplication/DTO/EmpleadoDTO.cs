@@ -12,5 +12,7 @@ namespace Clisoft.Aplication.DTO
         public string Telefono { get; set; }
         public decimal Sueldo { get; set; }
         public string Estado { get; set; }
+        public string IdUsuario { get; set; }
+        public string IdCargo { get; set; }
     }
 }

@@ -18,6 +18,7 @@ namespace Clisoft.Aplication.AutoMapper
             CreateMap<Orden, OrdenDTO>().ReverseMap();
             CreateMap<DetalleOrden, DetalleOrdenDTO>().ReverseMap();
             CreateMap<PerfilExamen, PerfilExamenDTO>().ReverseMap();
+            CreateMap<Resultado, ResultadoDTO>().ReverseMap();
         }
     }
 }
