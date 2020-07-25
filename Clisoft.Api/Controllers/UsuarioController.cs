@@ -1,4 +1,5 @@
-﻿using Clisoft.Aplication.DTO;
+﻿using Clisoft.Api.Models;
+using Clisoft.Aplication.DTO;
 using Clisoft.Aplication.Interface.Entity;
 using Microsoft.AspNetCore.Mvc;
 using System;
@@ -86,6 +87,20 @@ namespace Clisoft.Api.Controllers
                 _usuarioAppService.Save();
                 return NoContent();
 
+            }
+            catch (Exception)
+            {
+                return BadRequest();
+            }
+        }
+        [HttpPost("ValidarInicioSesion")]
+        public async Task<ActionResult<bool>> ValidarInicioSesion([FromBody] InicioSesion inicioSesion)
+        {
+            try
+            {
+                if (await _usuarioAppService.ValidarInicioSesionAsync(inicioSesion.usuario, inicioSesion.contraseña))
+                    return true;
+                return false;
             }
             catch (Exception)
             {
