@@ -14,5 +14,11 @@ namespace Clisoft.Infraestructure.Data.Repository.EntityFramework
         {
             _context = context;
         }
+
+        public string GenerarCodigo()
+        {
+            var numeroRegistrosMascota = _context.Mascota.Count();
+            return "MA0" + (numeroRegistrosMascota + 1);
+        }
     }
 }

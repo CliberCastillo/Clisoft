@@ -5,5 +5,6 @@ namespace Clisoft.Aplication.Interface.Entity
 {
     public interface IMascotaAppService : IBaseAppService<MascotaDTO,Mascota>
     {
+        string GenerarCodigo();
     }
 }

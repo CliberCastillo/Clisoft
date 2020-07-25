@@ -50,6 +50,7 @@ namespace Clisoft.Api.Controllers
         {
             try
             {
+                empleado.IdEmpleado = _empleadoAppService.GenerarCodigo();
                 _empleadoAppService.Add(empleado);
                 _empleadoAppService.Save();
                 return CreatedAtAction(nameof(Add), new { id = empleado.IdEmpleado }, empleado);

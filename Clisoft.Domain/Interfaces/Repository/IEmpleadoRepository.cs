@@ -7,5 +7,6 @@ namespace Clisoft.Domain.Interfaces.Repository
 {
     public interface IEmpleadoRepository : IGenericRepository<Empleado>
     {
+        string GenerarCodigo();
     }
 }

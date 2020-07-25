@@ -14,5 +14,10 @@ namespace Clisoft.Aplication.Service.Entity
         {
             _mascotaRepository = mascotaRepository;
         }
+
+        public string GenerarCodigo()
+        {
+            return _mascotaRepository.GenerarCodigo();
+        }
     }
 }

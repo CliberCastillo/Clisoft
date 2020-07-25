@@ -50,6 +50,7 @@ namespace Clisoft.Api.Controllers
         {
             try
             {
+                mascota.IdMascota = _mascotaAppService.GenerarCodigo();
                 _mascotaAppService.Add(mascota);
                 _mascotaAppService.Save();
                 return CreatedAtAction(nameof(Add), new { id = mascota.IdMascota }, mascota);

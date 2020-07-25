@@ -1,9 +1,7 @@
 ﻿using Clisoft.Domain.Entities;
 using Clisoft.Domain.Interfaces.Repository;
 using Clisoft.Infraestructure.Data.Context;
-using System;
-using System.Collections.Generic;
-using System.Text;
+using System.Linq;
 
 namespace Clisoft.Infraestructure.Data.Repository.EntityFramework
 {
@@ -14,6 +12,12 @@ namespace Clisoft.Infraestructure.Data.Repository.EntityFramework
         public DetalleOrdenRepository(ClisoftContext context) : base(context)
         {
             _context = context;
+        }
+
+        public string GenerarCodigo()
+        {
+            var numeroRegistrosDetalleOrden = _context.DetalleOrden.Count();
+            return "DO0" + (numeroRegistrosDetalleOrden + 1);
         }
     }
 }

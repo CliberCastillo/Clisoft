@@ -13,5 +13,10 @@ namespace Clisoft.Aplication.Service.Entity
         {
             _detalleOrdenRepository = detalleOrdenRepository;
         }
+
+        public string GenerarCodigo()
+        {
+            return _detalleOrdenRepository.GenerarCodigo();
+        }
     }
 }

@@ -50,7 +50,9 @@ namespace Clisoft.Api.Controllers
         {
             try
             {
-                _usuarioAppService.Add(usuario);
+                usuario.IdUsuario = _usuarioAppService.GenerarCodigo();
+                UsuarioDTO variable = usuario;
+                _usuarioAppService.Add(variable);
                 _usuarioAppService.Save();
                 return CreatedAtAction(nameof(Add), new { id = usuario.NombreUsuario }, usuario);
             }

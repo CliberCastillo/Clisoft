@@ -51,6 +51,7 @@ namespace Clisoft.Api.Controllers
         {
             try
             {
+                perfilExamen.IdPerfilExamen = _perfilExamenAppService.GenerarCodigo();
                 _perfilExamenAppService.Add(perfilExamen);
                 _perfilExamenAppService.Save();
                 return CreatedAtAction(nameof(Add), new { id = perfilExamen.IdPerfilExamen }, perfilExamen);

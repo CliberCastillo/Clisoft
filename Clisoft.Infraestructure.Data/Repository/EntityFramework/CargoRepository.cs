@@ -22,5 +22,11 @@ namespace Clisoft.Infraestructure.Data.Repository.EntityFramework
         {
             return await _context.Cargo.ToListAsync();
         }
+
+        public string GenerarCodigo()
+        {
+            var numeroRegistrosCargo = _context.Cargo.Count();
+            return "CA0" + (numeroRegistrosCargo + 1);
+        }
     }
 }

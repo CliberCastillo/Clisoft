@@ -13,5 +13,11 @@ namespace Clisoft.Aplication.Service.Entity
         {
             _examenRepository = examenRepository;
         }
+
+        public string GenerarCodigo()
+        {
+            return _examenRepository.GenerarCodigo();
+
+        }
     }
 }

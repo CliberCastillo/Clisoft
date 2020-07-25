@@ -8,5 +8,6 @@ namespace Clisoft.Aplication.Interface.Entity
 {
     public interface IOrdenAppService : IBaseAppService<OrdenDTO, Orden>
     {
+        string GenerarCodigo();
     }
 }

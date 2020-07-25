@@ -13,5 +13,10 @@ namespace Clisoft.Aplication.Service.Entity
         {
             _clienteRepository = clienteRepository;
         }
+
+        public string GenerarCodigo()
+        {
+            return _clienteRepository.GenerarCodigo();
+        }
     }
 }

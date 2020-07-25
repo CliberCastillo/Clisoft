@@ -50,6 +50,7 @@ namespace Clisoft.Api.Controllers
         {
             try
             {
+                examen.IdExamen = _examenAppService.GenerarCodigo();
                 _examenAppService.Add(examen);
                 _examenAppService.Save();
                 return CreatedAtAction(nameof(Add), new { id = examen.IdExamen }, examen);

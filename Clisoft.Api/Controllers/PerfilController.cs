@@ -50,6 +50,7 @@ namespace Clisoft.Api.Controllers
         {
             try
             {
+                perfil.IdPerfil = _perfilAppService.GenerarCodigo();
                 _perfilAppService.Add(perfil);
                 _perfilAppService.Save();
                 return CreatedAtAction(nameof(Add), new { id = perfil.IdPerfil }, perfil);

@@ -5,5 +5,6 @@ namespace Clisoft.Aplication.Interface.Entity
 {
     public interface IExamenAppService : IBaseAppService<ExamenDTO, Examen>
     {
+        string GenerarCodigo();
     }
 }

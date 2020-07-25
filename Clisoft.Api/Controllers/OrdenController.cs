@@ -51,6 +51,7 @@ namespace Clisoft.Api.Controllers
         {
             try
             {
+                orden.IdOrden = _ordenAppService.GenerarCodigo();
                 _ordenAppService.Add(orden);
                 _ordenAppService.Save();
                 return CreatedAtAction(nameof(Add), new { id = orden.IdOrden }, orden);

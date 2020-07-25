@@ -13,5 +13,10 @@ namespace Clisoft.Aplication.Service.Entity
         {
             _perfilRepository = perfilRepository;
         }
+
+        public string GenerarCodigo()
+        {
+            return _perfilRepository.GenerarCodigo();
+        }
     }
 }

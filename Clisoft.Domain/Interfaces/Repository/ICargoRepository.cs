@@ -7,5 +7,6 @@ namespace Clisoft.Domain.Interfaces.Repository
     public interface ICargoRepository : IGenericRepository<Cargo>
     {
         Task<List<Cargo>> buscarCargoAsync();
+        string GenerarCodigo();
     }
 }

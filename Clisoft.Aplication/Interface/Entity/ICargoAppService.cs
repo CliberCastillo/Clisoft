@@ -7,5 +7,6 @@ namespace Clisoft.Aplication.Interface.Entity
     public interface ICargoAppService : IBaseAppService<CargoDTO, Cargo>
     {
         Task<List<CargoDTO>> buscarCargoAsync();
+        string GenerarCodigo();
     }
 }

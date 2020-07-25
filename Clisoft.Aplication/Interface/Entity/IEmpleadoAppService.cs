@@ -5,5 +5,6 @@ namespace Clisoft.Aplication.Interface.Entity
 {
     public interface IEmpleadoAppService : IBaseAppService<EmpleadoDTO, Empleado>
     {
+        string GenerarCodigo();
     }
 }

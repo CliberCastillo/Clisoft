@@ -50,6 +50,7 @@ namespace Clisoft.Api.Controllers
         {
             try
             {
+                cargo.IdCargo = _cargoAppService.GenerarCodigo();
                 _cargoAppService.Add(cargo);
                 _cargoAppService.Save();
                 return CreatedAtAction(nameof(Add), new { id = cargo.IdCargo }, cargo);

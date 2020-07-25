@@ -51,6 +51,7 @@ namespace Clisoft.Api.Controllers
         {
             try
             {
+                cliente.IdCliente = _clienteAppService.GenerarCodigo();
                 _clienteAppService.Add(cliente);
                 _clienteAppService.Save();
                 return CreatedAtAction(nameof(Add), new { id = cliente.IdCliente }, cliente);

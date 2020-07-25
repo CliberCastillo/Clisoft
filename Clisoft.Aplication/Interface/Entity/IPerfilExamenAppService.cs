@@ -8,5 +8,6 @@ namespace Clisoft.Aplication.Interface.Entity
 {
     public interface IPerfilExamenAppService : IBaseAppService<PerfilExamenDTO,PerfilExamen>
     {
+        string GenerarCodigo();
     }
 }

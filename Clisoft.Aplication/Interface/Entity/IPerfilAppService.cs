@@ -5,5 +5,6 @@ namespace Clisoft.Aplication.Interface.Entity
 {
     public interface IPerfilAppService : IBaseAppService<PerfilDTO,Perfil>
     {
+        string GenerarCodigo();
     }
 }

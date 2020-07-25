@@ -13,5 +13,10 @@ namespace Clisoft.Aplication.Service.Entity
         {
             _empleadoRepository = empleadoRepository;
         }
+
+        public string GenerarCodigo()
+        {
+            return _empleadoRepository.GenerarCodigo();
+        }
     }
 }

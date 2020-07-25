@@ -16,5 +16,10 @@ namespace Clisoft.Aplication.Service.Entity
         {
             _perfilExamenRepository = perfilExamenRepository;
         }
+
+        public string GenerarCodigo()
+        {
+            return _perfilExamenRepository.GenerarCodigo();
+        }
     }
 }

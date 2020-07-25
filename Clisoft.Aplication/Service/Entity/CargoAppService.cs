@@ -18,5 +18,10 @@ namespace Clisoft.Aplication.Service.Entity
         {
             return _mapper.Map<List<Cargo>,List<CargoDTO>>(await _cargoRepository.buscarCargoAsync());
         }
+
+        public string GenerarCodigo()
+        {
+            return _cargoRepository.GenerarCodigo();
+        }
     }
 }
