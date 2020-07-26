@@ -19,19 +19,19 @@ namespace Clisoft.Infraestructure.Data.Configuration
 
             entity.Property(e => e.IdResultado)
                 .HasColumnName("idResultado")
-                .HasMaxLength(5)
+                .HasMaxLength(10)
                 .IsUnicode(false);
 
             entity.Property(e => e.IdDetalleOrden)
                 .IsRequired()
                 .HasColumnName("idDetalleOrden")
-                .HasMaxLength(5)
+                .HasMaxLength(10)
                 .IsUnicode(false);
 
             entity.Property(e => e.IdExamen)
                 .IsRequired()
                 .HasColumnName("idExamen")
-                .HasMaxLength(5)
+                .HasMaxLength(10)
                 .IsUnicode(false);
 
             entity.Property(e => e.NombreResultado)

@@ -10,7 +10,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Clisoft.Infraestructure.Data.Migrations
 {
     [DbContext(typeof(ClisoftContext))]
-    [Migration("20200725011508_BDClisoft")]
+    [Migration("20200725234656_BDClisoft")]
     partial class BDClisoft
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -25,8 +25,8 @@ namespace Clisoft.Infraestructure.Data.Migrations
                 {
                     b.Property<string>("IdCargo")
                         .HasColumnName("idCargo")
-                        .HasColumnType("varchar(5)")
-                        .HasMaxLength(5)
+                        .HasColumnType("varchar(10)")
+                        .HasMaxLength(10)
                         .IsUnicode(false);
 
                     b.Property<string>("Nombre")
@@ -44,8 +44,8 @@ namespace Clisoft.Infraestructure.Data.Migrations
                 {
                     b.Property<string>("IdCliente")
                         .HasColumnName("idCliente")
-                        .HasColumnType("varchar(5)")
-                        .HasMaxLength(5)
+                        .HasColumnType("varchar(10)")
+                        .HasMaxLength(10)
                         .IsUnicode(false);
 
                     b.Property<string>("Direccion")
@@ -72,8 +72,8 @@ namespace Clisoft.Infraestructure.Data.Migrations
                     b.Property<string>("IdUsuario")
                         .IsRequired()
                         .HasColumnName("idUsuario")
-                        .HasColumnType("varchar(5)")
-                        .HasMaxLength(5)
+                        .HasColumnType("varchar(10)")
+                        .HasMaxLength(10)
                         .IsUnicode(false);
 
                     b.Property<string>("Nombre")
@@ -108,8 +108,8 @@ namespace Clisoft.Infraestructure.Data.Migrations
                 {
                     b.Property<string>("IdDetalleOrden")
                         .HasColumnName("idDetalleOrden")
-                        .HasColumnType("varchar(5)")
-                        .HasMaxLength(5)
+                        .HasColumnType("varchar(10)")
+                        .HasMaxLength(10)
                         .IsUnicode(false);
 
                     b.Property<decimal>("CostoServicio")
@@ -119,15 +119,15 @@ namespace Clisoft.Infraestructure.Data.Migrations
                     b.Property<string>("IdOrden")
                         .IsRequired()
                         .HasColumnName("idOrden")
-                        .HasColumnType("varchar(5)")
-                        .HasMaxLength(5)
+                        .HasColumnType("varchar(10)")
+                        .HasMaxLength(10)
                         .IsUnicode(false);
 
                     b.Property<string>("IdPerfil")
                         .IsRequired()
                         .HasColumnName("idPerfil")
-                        .HasColumnType("varchar(5)")
-                        .HasMaxLength(5)
+                        .HasColumnType("varchar(10)")
+                        .HasMaxLength(10)
                         .IsUnicode(false);
 
                     b.HasKey("IdDetalleOrden");
@@ -143,8 +143,8 @@ namespace Clisoft.Infraestructure.Data.Migrations
                 {
                     b.Property<string>("IdEmpleado")
                         .HasColumnName("idEmpleado")
-                        .HasColumnType("varchar(5)")
-                        .HasMaxLength(5)
+                        .HasColumnType("varchar(10)")
+                        .HasMaxLength(10)
                         .IsUnicode(false);
 
                     b.Property<string>("Dni")
@@ -164,15 +164,15 @@ namespace Clisoft.Infraestructure.Data.Migrations
                     b.Property<string>("IdCargo")
                         .IsRequired()
                         .HasColumnName("idCargo")
-                        .HasColumnType("varchar(5)")
-                        .HasMaxLength(5)
+                        .HasColumnType("varchar(10)")
+                        .HasMaxLength(10)
                         .IsUnicode(false);
 
                     b.Property<string>("IdUsuario")
                         .IsRequired()
                         .HasColumnName("idUsuario")
-                        .HasColumnType("varchar(5)")
-                        .HasMaxLength(5)
+                        .HasColumnType("varchar(10)")
+                        .HasMaxLength(10)
                         .IsUnicode(false);
 
                     b.Property<string>("Nombre")
@@ -206,8 +206,8 @@ namespace Clisoft.Infraestructure.Data.Migrations
                 {
                     b.Property<string>("IdExamen")
                         .HasColumnName("idExamen")
-                        .HasColumnType("varchar(5)")
-                        .HasMaxLength(5)
+                        .HasColumnType("varchar(10)")
+                        .HasMaxLength(10)
                         .IsUnicode(false);
 
                     b.Property<string>("Nombre")
@@ -233,8 +233,8 @@ namespace Clisoft.Infraestructure.Data.Migrations
                 {
                     b.Property<string>("IdMascota")
                         .HasColumnName("idMascota")
-                        .HasColumnType("varchar(5)")
-                        .HasMaxLength(5)
+                        .HasColumnType("varchar(10)")
+                        .HasMaxLength(10)
                         .IsUnicode(false);
 
                     b.Property<string>("Especie")
@@ -247,8 +247,8 @@ namespace Clisoft.Infraestructure.Data.Migrations
                     b.Property<string>("IdCliente")
                         .IsRequired()
                         .HasColumnName("idCliente")
-                        .HasColumnType("varchar(5)")
-                        .HasMaxLength(5)
+                        .HasColumnType("varchar(10)")
+                        .HasMaxLength(10)
                         .IsUnicode(false);
 
                     b.Property<string>("Nombre")
@@ -276,8 +276,8 @@ namespace Clisoft.Infraestructure.Data.Migrations
                 {
                     b.Property<string>("IdOrden")
                         .HasColumnName("idOrden")
-                        .HasColumnType("varchar(5)")
-                        .HasMaxLength(5)
+                        .HasColumnType("varchar(10)")
+                        .HasMaxLength(10)
                         .IsUnicode(false);
 
                     b.Property<string>("Estado")
@@ -294,15 +294,15 @@ namespace Clisoft.Infraestructure.Data.Migrations
                     b.Property<string>("IdCliente")
                         .IsRequired()
                         .HasColumnName("idCliente")
-                        .HasColumnType("varchar(5)")
-                        .HasMaxLength(5)
+                        .HasColumnType("varchar(10)")
+                        .HasMaxLength(10)
                         .IsUnicode(false);
 
                     b.Property<string>("IdEmpleado")
                         .IsRequired()
                         .HasColumnName("idEmpleado")
-                        .HasColumnType("varchar(5)")
-                        .HasMaxLength(5)
+                        .HasColumnType("varchar(10)")
+                        .HasMaxLength(10)
                         .IsUnicode(false);
 
                     b.Property<string>("Resultado")
@@ -325,8 +325,8 @@ namespace Clisoft.Infraestructure.Data.Migrations
                 {
                     b.Property<string>("IdPerfil")
                         .HasColumnName("idPerfil")
-                        .HasColumnType("varchar(5)")
-                        .HasMaxLength(5)
+                        .HasColumnType("varchar(10)")
+                        .HasMaxLength(10)
                         .IsUnicode(false);
 
                     b.Property<decimal>("Costo")
@@ -349,22 +349,22 @@ namespace Clisoft.Infraestructure.Data.Migrations
                 {
                     b.Property<string>("IdPerfilExamen")
                         .HasColumnName("idPerfilExamen")
-                        .HasColumnType("varchar(5)")
-                        .HasMaxLength(5)
+                        .HasColumnType("varchar(10)")
+                        .HasMaxLength(10)
                         .IsUnicode(false);
 
                     b.Property<string>("IdExamen")
                         .IsRequired()
                         .HasColumnName("idExamen")
-                        .HasColumnType("varchar(5)")
-                        .HasMaxLength(5)
+                        .HasColumnType("varchar(10)")
+                        .HasMaxLength(10)
                         .IsUnicode(false);
 
                     b.Property<string>("IdPerfil")
                         .IsRequired()
                         .HasColumnName("idPerfil")
-                        .HasColumnType("varchar(5)")
-                        .HasMaxLength(5)
+                        .HasColumnType("varchar(10)")
+                        .HasMaxLength(10)
                         .IsUnicode(false);
 
                     b.Property<string>("NombreExamen")
@@ -387,22 +387,22 @@ namespace Clisoft.Infraestructure.Data.Migrations
                 {
                     b.Property<string>("IdResultado")
                         .HasColumnName("idResultado")
-                        .HasColumnType("varchar(5)")
-                        .HasMaxLength(5)
+                        .HasColumnType("varchar(10)")
+                        .HasMaxLength(10)
                         .IsUnicode(false);
 
                     b.Property<string>("IdDetalleOrden")
                         .IsRequired()
                         .HasColumnName("idDetalleOrden")
-                        .HasColumnType("varchar(5)")
-                        .HasMaxLength(5)
+                        .HasColumnType("varchar(10)")
+                        .HasMaxLength(10)
                         .IsUnicode(false);
 
                     b.Property<string>("IdExamen")
                         .IsRequired()
                         .HasColumnName("idExamen")
-                        .HasColumnType("varchar(5)")
-                        .HasMaxLength(5)
+                        .HasColumnType("varchar(10)")
+                        .HasMaxLength(10)
                         .IsUnicode(false);
 
                     b.Property<string>("NombreResultado")
@@ -424,8 +424,8 @@ namespace Clisoft.Infraestructure.Data.Migrations
                 {
                     b.Property<string>("IdUsuario")
                         .HasColumnName("idUsuario")
-                        .HasColumnType("varchar(5)")
-                        .HasMaxLength(5)
+                        .HasColumnType("varchar(10)")
+                        .HasMaxLength(10)
                         .IsUnicode(false);
 
                     b.Property<string>("Contraseña")

@@ -2,6 +2,7 @@
 {
     public class ClienteDTO
     {
+        
         public string IdCliente { get; set; }
         public string Nombre { get; set; }
         public string Direccion { get; set; }

@@ -16,7 +16,7 @@ namespace Clisoft.Infraestructure.Data.Configuration
 
             entity.Property(e => e.IdDetalleOrden)
                 .HasColumnName("idDetalleOrden")
-                .HasMaxLength(5)
+                .HasMaxLength(10)
                 .IsUnicode(false);
 
             entity.Property(e => e.CostoServicio)
@@ -26,13 +26,13 @@ namespace Clisoft.Infraestructure.Data.Configuration
             entity.Property(e => e.IdOrden)
                 .IsRequired()
                 .HasColumnName("idOrden")
-                .HasMaxLength(5)
+                .HasMaxLength(10)
                 .IsUnicode(false);
 
             entity.Property(e => e.IdPerfil)
                 .IsRequired()
                 .HasColumnName("idPerfil")
-                .HasMaxLength(5)
+                .HasMaxLength(10)
                 .IsUnicode(false);
 
             entity.HasOne(d => d.IdOrdenNavigation)

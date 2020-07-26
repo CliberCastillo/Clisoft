@@ -15,7 +15,7 @@ namespace Clisoft.Infraestructure.Data.Configuration
 
             entity.Property(e => e.IdExamen)
                 .HasColumnName("idExamen")
-                .HasMaxLength(5)
+                .HasMaxLength(10)
                 .IsUnicode(false);
 
             entity.Property(e => e.Nombre)

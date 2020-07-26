@@ -11,7 +11,7 @@ namespace Clisoft.Infraestructure.Data.Migrations
                 name: "Cargo",
                 columns: table => new
                 {
-                    idCargo = table.Column<string>(unicode: false, maxLength: 5, nullable: false),
+                    idCargo = table.Column<string>(unicode: false, maxLength: 10, nullable: false),
                     nombre = table.Column<string>(unicode: false, maxLength: 50, nullable: true)
                 },
                 constraints: table =>
@@ -23,7 +23,7 @@ namespace Clisoft.Infraestructure.Data.Migrations
                 name: "Examen",
                 columns: table => new
                 {
-                    idExamen = table.Column<string>(unicode: false, maxLength: 5, nullable: false),
+                    idExamen = table.Column<string>(unicode: false, maxLength: 10, nullable: false),
                     nombre = table.Column<string>(unicode: false, maxLength: 30, nullable: false),
                     tipo = table.Column<string>(unicode: false, maxLength: 30, nullable: false)
                 },
@@ -36,7 +36,7 @@ namespace Clisoft.Infraestructure.Data.Migrations
                 name: "Perfil",
                 columns: table => new
                 {
-                    idPerfil = table.Column<string>(unicode: false, maxLength: 5, nullable: false),
+                    idPerfil = table.Column<string>(unicode: false, maxLength: 10, nullable: false),
                     nombre = table.Column<string>(unicode: false, maxLength: 50, nullable: false),
                     costo = table.Column<decimal>(type: "decimal(18, 0)", nullable: false)
                 },
@@ -49,7 +49,7 @@ namespace Clisoft.Infraestructure.Data.Migrations
                 name: "Usuario",
                 columns: table => new
                 {
-                    idUsuario = table.Column<string>(unicode: false, maxLength: 5, nullable: false),
+                    idUsuario = table.Column<string>(unicode: false, maxLength: 10, nullable: false),
                     NombreUsuario = table.Column<string>(unicode: false, maxLength: 30, nullable: false),
                     contraseña = table.Column<string>(unicode: false, maxLength: 30, nullable: false)
                 },
@@ -62,9 +62,9 @@ namespace Clisoft.Infraestructure.Data.Migrations
                 name: "PerfilExamen",
                 columns: table => new
                 {
-                    idPerfilExamen = table.Column<string>(unicode: false, maxLength: 5, nullable: false),
-                    idPerfil = table.Column<string>(unicode: false, maxLength: 5, nullable: false),
-                    idExamen = table.Column<string>(unicode: false, maxLength: 5, nullable: false),
+                    idPerfilExamen = table.Column<string>(unicode: false, maxLength: 10, nullable: false),
+                    idPerfil = table.Column<string>(unicode: false, maxLength: 10, nullable: false),
+                    idExamen = table.Column<string>(unicode: false, maxLength: 10, nullable: false),
                     nombreExamen = table.Column<string>(unicode: false, maxLength: 30, nullable: false)
                 },
                 constraints: table =>
@@ -88,14 +88,14 @@ namespace Clisoft.Infraestructure.Data.Migrations
                 name: "Cliente",
                 columns: table => new
                 {
-                    idCliente = table.Column<string>(unicode: false, maxLength: 5, nullable: false),
+                    idCliente = table.Column<string>(unicode: false, maxLength: 10, nullable: false),
                     nombre = table.Column<string>(unicode: false, maxLength: 50, nullable: false),
                     direccion = table.Column<string>(unicode: false, maxLength: 50, nullable: false),
                     telefono = table.Column<string>(unicode: false, maxLength: 15, nullable: false),
                     nombreContacto = table.Column<string>(unicode: false, maxLength: 40, nullable: false),
                     distrito = table.Column<string>(unicode: false, maxLength: 30, nullable: false),
                     estado = table.Column<string>(unicode: false, maxLength: 20, nullable: false),
-                    idUsuario = table.Column<string>(unicode: false, maxLength: 5, nullable: false)
+                    idUsuario = table.Column<string>(unicode: false, maxLength: 10, nullable: false)
                 },
                 constraints: table =>
                 {
@@ -112,14 +112,14 @@ namespace Clisoft.Infraestructure.Data.Migrations
                 name: "Empleado",
                 columns: table => new
                 {
-                    idEmpleado = table.Column<string>(unicode: false, maxLength: 5, nullable: false),
+                    idEmpleado = table.Column<string>(unicode: false, maxLength: 10, nullable: false),
                     nombre = table.Column<string>(unicode: false, maxLength: 30, nullable: false),
                     dni = table.Column<string>(unicode: false, maxLength: 8, nullable: false),
                     telefono = table.Column<string>(unicode: false, maxLength: 15, nullable: false),
                     sueldo = table.Column<decimal>(type: "decimal(18, 0)", nullable: false),
                     estado = table.Column<string>(unicode: false, maxLength: 20, nullable: false),
-                    idUsuario = table.Column<string>(unicode: false, maxLength: 5, nullable: false),
-                    idCargo = table.Column<string>(unicode: false, maxLength: 5, nullable: false)
+                    idUsuario = table.Column<string>(unicode: false, maxLength: 10, nullable: false),
+                    idCargo = table.Column<string>(unicode: false, maxLength: 10, nullable: false)
                 },
                 constraints: table =>
                 {
@@ -142,12 +142,12 @@ namespace Clisoft.Infraestructure.Data.Migrations
                 name: "Mascota",
                 columns: table => new
                 {
-                    idMascota = table.Column<string>(unicode: false, maxLength: 5, nullable: false),
+                    idMascota = table.Column<string>(unicode: false, maxLength: 10, nullable: false),
                     nombre = table.Column<string>(unicode: false, maxLength: 30, nullable: false),
                     Genero = table.Column<string>(nullable: true),
                     raza = table.Column<string>(unicode: false, maxLength: 50, nullable: false),
                     especie = table.Column<string>(nullable: true),
-                    idCliente = table.Column<string>(unicode: false, maxLength: 5, nullable: false)
+                    idCliente = table.Column<string>(unicode: false, maxLength: 10, nullable: false)
                 },
                 constraints: table =>
                 {
@@ -164,12 +164,12 @@ namespace Clisoft.Infraestructure.Data.Migrations
                 name: "Orden",
                 columns: table => new
                 {
-                    idOrden = table.Column<string>(unicode: false, maxLength: 5, nullable: false),
+                    idOrden = table.Column<string>(unicode: false, maxLength: 10, nullable: false),
                     estado = table.Column<string>(unicode: false, maxLength: 20, nullable: false),
                     fechaRegistro = table.Column<DateTime>(type: "datetime", nullable: false),
                     resultado = table.Column<string>(unicode: false, maxLength: 20, nullable: false),
-                    idCliente = table.Column<string>(unicode: false, maxLength: 5, nullable: false),
-                    idEmpleado = table.Column<string>(unicode: false, maxLength: 5, nullable: false)
+                    idCliente = table.Column<string>(unicode: false, maxLength: 10, nullable: false),
+                    idEmpleado = table.Column<string>(unicode: false, maxLength: 10, nullable: false)
                 },
                 constraints: table =>
                 {
@@ -192,9 +192,9 @@ namespace Clisoft.Infraestructure.Data.Migrations
                 name: "DetalleOrden",
                 columns: table => new
                 {
-                    idDetalleOrden = table.Column<string>(unicode: false, maxLength: 5, nullable: false),
-                    idPerfil = table.Column<string>(unicode: false, maxLength: 5, nullable: false),
-                    idOrden = table.Column<string>(unicode: false, maxLength: 5, nullable: false),
+                    idDetalleOrden = table.Column<string>(unicode: false, maxLength: 10, nullable: false),
+                    idPerfil = table.Column<string>(unicode: false, maxLength: 10, nullable: false),
+                    idOrden = table.Column<string>(unicode: false, maxLength: 10, nullable: false),
                     costoServicio = table.Column<decimal>(type: "decimal(18, 0)", nullable: false)
                 },
                 constraints: table =>
@@ -218,9 +218,9 @@ namespace Clisoft.Infraestructure.Data.Migrations
                 name: "Resultado",
                 columns: table => new
                 {
-                    idResultado = table.Column<string>(unicode: false, maxLength: 5, nullable: false),
-                    idExamen = table.Column<string>(unicode: false, maxLength: 5, nullable: false),
-                    idDetalleOrden = table.Column<string>(unicode: false, maxLength: 5, nullable: false),
+                    idResultado = table.Column<string>(unicode: false, maxLength: 10, nullable: false),
+                    idExamen = table.Column<string>(unicode: false, maxLength: 10, nullable: false),
+                    idDetalleOrden = table.Column<string>(unicode: false, maxLength: 10, nullable: false),
                     NombreResultado = table.Column<string>(unicode: false, maxLength: 50, nullable: false)
                 },
                 constraints: table =>

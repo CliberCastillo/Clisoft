@@ -12,7 +12,7 @@ namespace Clisoft.Infraestructure.Data.Configuration
 
             entity.Property(e => e.IdCargo)
                 .HasColumnName("idCargo")
-                .HasMaxLength(5)
+                .HasMaxLength(10)
                 .IsUnicode(false);
 
             entity.Property(e => e.Nombre)

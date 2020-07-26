@@ -14,7 +14,7 @@ namespace Clisoft.Infraestructure.Data.Configuration
 
             entity.Property(e => e.IdCliente)
                 .HasColumnName("idCliente")
-                .HasMaxLength(5)
+                .HasMaxLength(10)
                 .IsUnicode(false);
 
             entity.Property(e => e.Direccion)
@@ -38,7 +38,7 @@ namespace Clisoft.Infraestructure.Data.Configuration
             entity.Property(e => e.IdUsuario)
                 .IsRequired()
                 .HasColumnName("idUsuario")
-                .HasMaxLength(5)
+                .HasMaxLength(10)
                 .IsUnicode(false);
 
             entity.Property(e => e.Nombre)
