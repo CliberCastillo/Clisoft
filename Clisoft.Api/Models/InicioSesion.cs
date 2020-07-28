@@ -7,7 +7,7 @@ namespace Clisoft.Api.Models
 {
     public class InicioSesion
     {
-        public string usuario { get; set; }
+        public string nombreUsuario { get; set; }
         public string contraseña { get; set; }
     }
 }

@@ -94,11 +94,11 @@ namespace Clisoft.Api.Controllers
             }
         }
         [HttpPost("ValidarInicioSesion")]
-        public async Task<ActionResult<bool>> ValidarInicioSesion([FromBody] InicioSesion inicioSesion)
+        public async Task<ActionResult<bool>> ValidarInicioSesionAsync([FromBody] InicioSesion inicioSesion)
         {
             try
             {
-                if (await _usuarioAppService.ValidarInicioSesionAsync(inicioSesion.usuario, inicioSesion.contraseña))
+                if (await _usuarioAppService.ValidarInicioSesionAsync(inicioSesion.nombreUsuario, inicioSesion.contraseña))
                     return true;
                 return false;
             }
