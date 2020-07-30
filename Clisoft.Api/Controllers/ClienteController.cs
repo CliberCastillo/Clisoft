@@ -1,4 +1,5 @@
-﻿using Clisoft.Aplication.DTO;
+﻿using Clisoft.Api.Models;
+using Clisoft.Aplication.DTO;
 using Clisoft.Aplication.Interface.Entity;
 using Microsoft.AspNetCore.Mvc;
 using System;
@@ -13,9 +14,12 @@ namespace Clisoft.Api.Controllers
     public class ClienteController : ControllerBase
     {
         private readonly IClienteAppService _clienteAppService;
-        public ClienteController(IClienteAppService clienteAppService)
+        private readonly IUsuarioAppService _usuarioAppService;
+
+        public ClienteController(IClienteAppService clienteAppService, IUsuarioAppService usuarioAppService)
         {
             _clienteAppService = clienteAppService;
+            _usuarioAppService = usuarioAppService;
         }
         [HttpGet]
         public ActionResult<List<ClienteDTO>> GetAll()
@@ -47,10 +51,28 @@ namespace Clisoft.Api.Controllers
             }
         }
         [HttpPost]
-        public ActionResult<ClienteDTO> Add([FromBody] ClienteDTO cliente)
+        public ActionResult<ClienteDTO> Add([FromBody] RegistrarClienteViewModel registrarCliente)
         {
             try
             {
+                var generarIdUsuario = _usuarioAppService.GenerarCodigo();
+                UsuarioDTO usuarioDTO = new UsuarioDTO
+                {
+                    IdUsuario = generarIdUsuario,
+                    NombreUsuario = registrarCliente.nombreUsuario,
+                    Contraseña = registrarCliente.contraseña
+                };
+                _usuarioAppService.Add(usuarioDTO);
+                ClienteDTO cliente = new ClienteDTO
+                {
+                    Nombre = registrarCliente.Nombre,
+                    Direccion = registrarCliente.Direccion,
+                    Telefono = registrarCliente.Telefono,
+                    NombreContacto = registrarCliente.NombreContacto,
+                    Distrito = registrarCliente.Distrito,
+                    Estado = "A",
+                    IdUsuario = generarIdUsuario
+                };
                 cliente.IdCliente = _clienteAppService.GenerarCodigo();
                 _clienteAppService.Add(cliente);
                 _clienteAppService.Save();

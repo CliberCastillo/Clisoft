@@ -24,9 +24,9 @@ namespace Clisoft.Api.Controllers
             {
                 return _usuarioAppService.GetAll();
             }
-            catch (Exception ex)
+            catch (Exception)
             {
-                return BadRequest(ex.Message);
+                return BadRequest();
             }
         }
         [HttpGet("{id}")]
@@ -52,8 +52,7 @@ namespace Clisoft.Api.Controllers
             try
             {
                 usuario.IdUsuario = _usuarioAppService.GenerarCodigo();
-                UsuarioDTO variable = usuario;
-                _usuarioAppService.Add(variable);
+                _usuarioAppService.Add(usuario);
                 _usuarioAppService.Save();
                 return CreatedAtAction(nameof(Add), new { id = usuario.NombreUsuario }, usuario);
             }
@@ -93,8 +92,8 @@ namespace Clisoft.Api.Controllers
                 return BadRequest();
             }
         }
-        [HttpPost("ValidarInicioSesion")]
-        public async Task<ActionResult<bool>> ValidarInicioSesionAsync([FromBody] InicioSesion inicioSesion)
+        [HttpPost("IniciarSesion")]
+        public async Task<ActionResult<bool>> ValidarInicioSesionAsync([FromBody] InicioSesionViewModel inicioSesion)
         {
             try
             {
