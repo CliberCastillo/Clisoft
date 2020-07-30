@@ -24,9 +24,9 @@ namespace Clisoft.Api.Controllers
             {
                 return _usuarioAppService.GetAll();
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-                return BadRequest();
+                return BadRequest(ex.Message);
             }
         }
         [HttpGet("{id}")]

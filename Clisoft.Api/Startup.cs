@@ -26,7 +26,9 @@ namespace Clisoft.Api
 
             services.AddAutoMapper(configure => configure.AddProfile<MappingsProfile>(),typeof(Startup));
 
-            services.AddDbContext<ClisoftContext>(options => options.UseSqlServer(Configuration.GetConnectionString("Conexion")));
+            services.AddDbContext<ClisoftContext>(options => 
+            options.UseSqlServer(Configuration.GetConnectionString("Conexion")));
+
             NativeInjectorBootStrapper.RegisterServices(services);
 
         }
