@@ -91,5 +91,20 @@ namespace Clisoft.Api.Controllers
                 return BadRequest();
             }
         }
+        [HttpPost("ListadoMascotasPorCliente")]
+        public async Task<ActionResult<List<MascotaDTO>>> ListadoDeMascotasPorIdClienteAsync(string usuario, string contraseña)
+        {
+            try
+            {
+                var lstMascota = await _mascotaAppService.ListadoDeMascotasPorClienteAsync(usuario, contraseña);
+                if (lstMascota == null)
+                    return NotFound();
+                return lstMascota;
+            }
+            catch (Exception)
+            {
+                return BadRequest();
+            }
+        }
     }
 }
