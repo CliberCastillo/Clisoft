@@ -114,5 +114,24 @@ namespace Clisoft.Api.Controllers
                 return BadRequest();
             }
         }
+        [HttpPost("UsuarioCliente")]
+        public async Task<ActionResult<ClienteUsuarioDTO>> NombreCorreoClienteAsync([FromBody] InicioSesionViewModel inicioSesion)
+        {
+            try
+            {
+                var clientePorInicioSesion = await _clienteAppService.NombreCorreoClienteAsync(inicioSesion.nombreUsuario, inicioSesion.contraseña);
+                if (clientePorInicioSesion == null)
+                {
+                    return NotFound();
+                }
+                return clientePorInicioSesion;
+
+            }
+            catch (Exception)
+            {
+                return BadRequest();
+            }
+        }
+
     }
 }

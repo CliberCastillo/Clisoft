@@ -1,6 +1,7 @@
 ﻿using AutoMapper;
 using Clisoft.Aplication.DTO;
 using Clisoft.Domain.Entities;
+using Clisoft.Domain.Helper;
 
 namespace Clisoft.Aplication.AutoMapper
 {
@@ -19,6 +20,7 @@ namespace Clisoft.Aplication.AutoMapper
             CreateMap<DetalleOrden, DetalleOrdenDTO>().ReverseMap();
             CreateMap<PerfilExamen, PerfilExamenDTO>().ReverseMap();
             CreateMap<Resultado, ResultadoDTO>().ReverseMap();
+            CreateMap<ClienteUsuario, ClienteUsuarioDTO>().ReverseMap();
         }
     }
 }
