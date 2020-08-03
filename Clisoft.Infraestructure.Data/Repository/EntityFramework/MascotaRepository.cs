@@ -17,6 +17,12 @@ namespace Clisoft.Infraestructure.Data.Repository.EntityFramework
             _context = context;
         }
 
+        public async Task<Mascota> BuscarMascotaPorIdONombreAsync(string nombreid)
+        {
+            return await _context.Mascota.Where(x => x.IdMascota == nombreid || x.Nombre == nombreid)
+                                            .FirstOrDefaultAsync();
+        }
+
         public string GenerarCodigo()
         {
             var numeroRegistrosMascota = _context.Mascota.Count();

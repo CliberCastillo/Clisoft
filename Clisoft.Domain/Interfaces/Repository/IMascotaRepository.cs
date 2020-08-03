@@ -8,5 +8,6 @@ namespace Clisoft.Domain.Interfaces.Repository
     {
         string GenerarCodigo();
         Task<List<Mascota>> ListadoDeMascotasPorClienteAsync(string usuario, string contraseña);
+        Task<Mascota> BuscarMascotaPorIdONombreAsync(string nombreid);
     }
 }

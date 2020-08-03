@@ -26,7 +26,6 @@ namespace Clisoft.Infraestructure.Data.Repository.EntityFramework
 
         public async Task<ClienteUsuario> NombreCorreoClienteAsync(string usuario, string contraseña)
         {
-
             return await _context.Cliente
                         .Join(_context.Usuario, c => c.IdUsuario, u => u.IdUsuario, (cliente, usuario) => new { cliente, usuario })
                         .Where(x => x.usuario.NombreUsuario == usuario && x.usuario.Contraseña == contraseña)

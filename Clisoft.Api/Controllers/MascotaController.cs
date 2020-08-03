@@ -106,5 +106,22 @@ namespace Clisoft.Api.Controllers
                 return BadRequest();
             }
         }
+        [HttpGet("IdONombre/{nombreid}")]
+        public async Task<ActionResult<MascotaDTO>> BuscarMascotaPorIdONombreAsync(string nombreid)
+        {
+            try
+            {
+                var mascotaPorIdONombre = await _mascotaAppService.BuscarMascotaPorIdONombreAsync(nombreid);
+                if (mascotaPorIdONombre == null)
+                {
+                    return NotFound();
+                }
+                return mascotaPorIdONombre;
+            }
+            catch (Exception)
+            {
+                return BadRequest();
+            }
+        }
     }
 }

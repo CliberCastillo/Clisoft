@@ -9,5 +9,6 @@ namespace Clisoft.Aplication.Interface.Entity
     {
         string GenerarCodigo();
         Task<List<MascotaDTO>> ListadoDeMascotasPorClienteAsync(string usuario, string contraseña);
+        Task<MascotaDTO> BuscarMascotaPorIdONombreAsync(string nombreid);
     }
 }

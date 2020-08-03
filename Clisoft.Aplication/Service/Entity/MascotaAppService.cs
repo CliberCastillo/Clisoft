@@ -16,6 +16,11 @@ namespace Clisoft.Aplication.Service.Entity
             _mascotaRepository = mascotaRepository;
         }
 
+        public async Task<MascotaDTO> BuscarMascotaPorIdONombreAsync(string nombreid)
+        {
+            return _mapper.Map<Mascota, MascotaDTO>(await _mascotaRepository.BuscarMascotaPorIdONombreAsync(nombreid));
+        }
+
         public string GenerarCodigo()
         {
             return _mascotaRepository.GenerarCodigo();
