@@ -8,7 +8,6 @@ namespace Clisoft.Presentation.Web.Pages
 {
     public partial class Counter
     {
-        //contador de blazor por defecto
         private int currentCount = 0;
 
         private void IncrementCount()
