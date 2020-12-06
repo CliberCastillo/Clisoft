@@ -10,7 +10,7 @@ La arquitectura es similar como se ve en la siguiente imagen.
 * Clean Code
 * Patron de diseño Repository
 * Inyeccion de dependencias
-* Swagguer
+* Swagger
 * JWT
 * AutoMapper
 
